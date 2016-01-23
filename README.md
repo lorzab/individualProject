@@ -9,3 +9,6 @@
 ###Design
 
 ###[Project Plan](ProjectPlan.md)
+
+
+###[Development Journal](Journal.md)
