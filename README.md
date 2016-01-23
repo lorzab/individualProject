@@ -8,3 +8,4 @@
 
 ###Design
 
+[Project Plan](README.md)
