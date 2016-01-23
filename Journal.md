@@ -1,5 +1,9 @@
 #Journal
 
+To document project progress, accomplishments, snags and time spent on this class.
+
+[Time Log](TimeLog.md)
+
 ##Week 1
 ###1/23/16
 
