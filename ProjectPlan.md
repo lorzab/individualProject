@@ -11,17 +11,23 @@
 ##Week 2
 - Document application flow
 - Get project approved
+- Flush out screen design
+- Start working on JSPs
+
+##Week 3
 - Create project structure in IntelliJ
 - Work on database design
-- Start working on JSPs
+- Start logging on JSP
 - Weekly journal entry
 - Complete project plan
 
-##Week 3
+##Week 4
 - Complete JSPs
 - Create database and all tables/columns
 - Weekly journal entry
 - Add authentication/login
 - Determine independent research topic
 
-##Week 4
+##Week 5
+
+##Week 6
