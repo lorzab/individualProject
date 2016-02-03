@@ -1,7 +1,7 @@
 #Screen Design
 
 ###Home Screen
-![homeScreen](../images/SignIn.jpg)
+![homeScreen](../images/SignIn.png)
 
 ###Browse Books
-![allBrowse](../images/MyBookshelf.jpeg)
+![allBrowse](../images/AllBrowse.png)
