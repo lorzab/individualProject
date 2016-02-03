@@ -37,4 +37,4 @@
 ![moderator](../images/Moderator.png)
 
 ###Approve Book Entry
-![approveBook](../images/AproveBook.png)
+![approveBook](../images/ApproveBook.png)
