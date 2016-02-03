@@ -13,8 +13,11 @@ I enjoy reading and do many of my family however I tend to lend my books or sell
 	- Store users and roles
 	- Store book information
 * Web Services or APIs
+	- look for a web service that will work with isbn numbers (pull up cover art, link  to amazon)?
 * Bookstrap
+	- Make the interface look plesant
 * Logging
+	- configure logging for production to help with errors and debugging
 * Site and database hosted on OpenShift
 * Jenkins for Continuous Intergration
 * Unit Testing
