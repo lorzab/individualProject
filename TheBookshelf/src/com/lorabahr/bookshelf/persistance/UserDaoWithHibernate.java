@@ -28,7 +28,7 @@ public class UserDaoWithHibernate implements UserDao {
     }
 
     @Override
-    public void updateUser(User user, String newFirstName) {
+    public void updateUserFirstName(User user, String newFirstName) {
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;

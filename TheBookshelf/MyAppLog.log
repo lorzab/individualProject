@@ -42,3 +42,88 @@ HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
 HHH000399: Using default transaction strategy (direct JDBC transactions)
 HHH000397: Using ASTQueryTranslatorFactory
 Added user: com.lorabahr.bookshelf.entity.User{id=1, firstName='Lora', lastName='Bahr', userName='lBahr', emailAddress='lora@gmail.com', password='hello'} with id of: 1
+HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+HHH000412: Hibernate Core {4.2.2.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000221: Reading mappings from resource: User.hbm.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000115: Hibernate connection pool size: 20
+HHH000006: Autocommit mode: false
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/BookshelfDB]
+HHH000046: Connection properties: {user=admin, password=****}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+HHH000412: Hibernate Core {4.2.2.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000221: Reading mappings from resource: User.hbm.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000115: Hibernate connection pool size: 20
+HHH000006: Autocommit mode: false
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/BookshelfDB]
+HHH000046: Connection properties: {user=admin, password=****}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+Added user: com.lorabahr.bookshelf.entity.User{id=2, firstName='first', lastName='last', userName='LLCoolJ', emailAddress='IrockThis@gmail.com', password='password123'} with id of: 2
+HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+HHH000412: Hibernate Core {4.2.2.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000221: Reading mappings from resource: User.hbm.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000115: Hibernate connection pool size: 20
+HHH000006: Autocommit mode: false
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/BookshelfDB]
+HHH000046: Connection properties: {user=admin, password=****}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+Added user: com.lorabahr.bookshelf.entity.User{id=3, firstName='first', lastName='last', userName='LLCoolJ', emailAddress='IrockThis@gmail.com', password='password123'} with id of: 3
+Added user: com.lorabahr.bookshelf.entity.User{id=4, firstName='first', lastName='last', userName='LLCoolJ', emailAddress='IrockThis@gmail.com', password='password123'} with id of: 4
+HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+HHH000412: Hibernate Core {4.2.2.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000221: Reading mappings from resource: User.hbm.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000115: Hibernate connection pool size: 20
+HHH000006: Autocommit mode: false
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/BookshelfDB]
+HHH000046: Connection properties: {user=admin, password=****}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+Added user: com.lorabahr.bookshelf.entity.User{id=5, firstName='first', lastName='last', userName='LLCoolJ', emailAddress='IrockThis@gmail.com', password='password123'} with id of: 5
+HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+HHH000412: Hibernate Core {4.2.2.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000221: Reading mappings from resource: User.hbm.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000115: Hibernate connection pool size: 20
+HHH000006: Autocommit mode: false
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/BookshelfDB]
+HHH000046: Connection properties: {user=admin, password=****}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+Added user: com.lorabahr.bookshelf.entity.User{id=6, firstName='first', lastName='last', userName='LLCoolJ', emailAddress='IrockThis@gmail.com', password='password123'} with id of: 6
