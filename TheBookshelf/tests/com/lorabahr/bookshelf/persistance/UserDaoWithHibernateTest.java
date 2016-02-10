@@ -17,16 +17,16 @@ public class UserDaoWithHibernateTest {
 
         UserDaoWithHibernate dao = new UserDaoWithHibernate();
         int insertUserId = 0;
-        //create user to add
-        User user = new User();
-        user.setFirstName("first");
-        user.setLastName("last");
-        user.setEmailAddress("IrockThis@gmail.com");
-        user.setUserName("LLCoolJ");
-        user.setPassword("password123");
-        user.setId(0);
 
-        insertUserId = dao.addUser(user);
+        //create user for test
+        User getAllUser = new User();
+        getAllUser.setFirstName("first");
+        getAllUser.setLastName("last");
+        getAllUser.setEmailAddress("IrockThis@gmail.com");
+        getAllUser.setUserName("LLCoolJ");
+        getAllUser.setPassword("password123");
+        getAllUser.setId(0);
+        insertUserId = dao.addUser(getAllUser);
 
     }
 
@@ -34,21 +34,19 @@ public class UserDaoWithHibernateTest {
     public void testGetAllUsers() throws Exception {
 
         UserDaoWithHibernate dao = new UserDaoWithHibernate();
+        List<User> users = dao.getAllUsers();
 
-        List<User> allUsers = dao.getAllUsers();
-
-        assertEquals("There is the wrong amount in the list", 1, allUsers.size());
+        assertEquals("There is the wrong amount in the list", 3, users.size());
     }
 
     @Test
     public void testUpdateUserFirstName() throws Exception {
 
         UserDaoWithHibernate dao = new UserDaoWithHibernate();
-        String fName = "Kelli";
-        User user = new User(1, "Lora", "Bahr", "lBahr", "lora@gmail.com", "hello");
+        User user = new User(3, "Lora", "Bahr", "lBahr", "lora@gmail.com", "hello");
 
-        dao.updateUserFirstName(user, "Kelli");
-        assertEquals("This is the wrong user", "Kelli", user.getFirstName());
+        dao.updateUserFirstName(user);
+        assertEquals("This is the wrong user", "Lora", user.getFirstName());
     }
 
     @Test
@@ -56,15 +54,19 @@ public class UserDaoWithHibernateTest {
 
         UserDaoWithHibernate dao = new UserDaoWithHibernate();
         User user = new User();
+        int sizeBefore;
+        int sizeAfter;
         user.setFirstName("first");
         user.setLastName("last");
         user.setEmailAddress("IrockThis@gmail.com");
         user.setUserName("LLCoolJ");
         user.setPassword("password123");
-        user.setId(3);
+        user.setId(1);
+        sizeBefore = dao.getAllUsers().size();
         dao.deleteUser(user);
+        sizeAfter = dao.getAllUsers().size();
 
-        //assert true that id 3 is empty?
+        assertTrue("The user was not deleted", sizeBefore > sizeAfter);
     }
 
     @Test
@@ -75,10 +77,10 @@ public class UserDaoWithHibernateTest {
 
         //create user to add
         User user = new User();
-        user.setFirstName("Lora");
-        user.setLastName("Bahr");
-        user.setEmailAddress("lora@gmail.com");
-        user.setUserName("lBahr");
+        user.setFirstName("Tony");
+        user.setLastName("Stark");
+        user.setEmailAddress("IronMan@gmail.com");
+        user.setUserName("ironMan");
         user.setPassword("hello");
         user.setId(0);
 

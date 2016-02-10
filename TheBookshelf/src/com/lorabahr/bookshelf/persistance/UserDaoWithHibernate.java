@@ -3,6 +3,7 @@ package com.lorabahr.bookshelf.persistance;
 import com.lorabahr.bookshelf.entity.User;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,19 +24,37 @@ public class UserDaoWithHibernate implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
-        return users;
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+        List<User> allUsers = new ArrayList<User>();
+        try {
+            tx = session.beginTransaction();
+            Criteria criteria = session.createCriteria(User.class);
+            List<User> users = criteria.list();
+
+            for (User u: users) {
+                allUsers.add(u);
+            }
+
+            tx.commit();
+        } catch (HibernateException e) {
+            if(tx != null) {
+                e.printStackTrace();
+            }
+        } finally {
+            session.close();
+        }
+        return allUsers;
     }
 
     @Override
-    public void updateUserFirstName(User user, String newFirstName) {
+    public void updateUserFirstName(User user) {
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
 
         try {
             tx = session.beginTransaction();
-            user.setFirstName(newFirstName);
             session.update(user);
             tx.commit();
         } catch (HibernateException e) {
