@@ -26,9 +26,11 @@
 - Work on JSPs
 - Create database and all tables/columns
 - Weekly journal entry
-- Add authentication/login
 - Determine independent research topic
 
 ##Week 5
+- Research web service to use (looking at isbndb.com and a captcha for login)
+-Journal
+- Add authentication/login
 
 ##Week 6
