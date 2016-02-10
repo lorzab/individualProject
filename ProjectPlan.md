@@ -17,12 +17,13 @@
 ##Week 3
 - Create project structure in IntelliJ
 - Work on database design
-- Start logging on JSP
+- Set up hibernate in project
+- Implement a DAO for one table and get the test working
 - Weekly journal entry
 - Complete project plan
 
 ##Week 4
-- Complete JSPs
+- Work on JSPs
 - Create database and all tables/columns
 - Weekly journal entry
 - Add authentication/login
