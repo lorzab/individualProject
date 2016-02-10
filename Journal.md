@@ -25,3 +25,8 @@ Completed:
 * I created the project in IntelliJ and included the log4j and junit libraries
 
 I had issues with the negative unit tests.  At first I did not understand what to put for the negative test.  Then I had a few issues comming up with bad data or trying implement a method in the wrong way.  I think I that I have the flow of the application and layout of the screens.  I am trying to figure out all of the database tables and what I will need and all the columns needed.
+
+
+##Week 3
+###2/9/16
+This week I worked on incorporating hibernate into my application with the DAO structure.  I have one user class implemented and working and test running to check it.  I also worked on the database design and what tables will be needed.  I put together the slide presentation for my first extracurricular activity on the Radar Framework and Action-Domain-Responder architectural pattern.
