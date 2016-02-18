@@ -40,12 +40,12 @@ public class UserDaoWithHibernateTest {
     }
 
     @Test
-    public void testUpdateUserFirstName() throws Exception {
+    public void testUpdateUser() throws Exception {
 
         UserDaoWithHibernate dao = new UserDaoWithHibernate();
         User user = new User(3, "Lora", "Bahr", "lBahr", "lora@gmail.com", "hello");
 
-        dao.updateUserFirstName(user);
+        dao.updateUser(user);
         assertEquals("This is the wrong user", "Lora", user.getFirstName());
     }
 

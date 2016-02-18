@@ -19,8 +19,12 @@
         <property name="connection.password">
             admin
         </property>
+
         <mapping resource="User.hbm.xml" />
         <mapping class="com.lorabahr.bookshelf.entity.User" />
+
+        <mapping resource="Role.hbm.xml" />
+        <mapping class="com.lorabahr.bookshelf.entity.Role" />
     </session-factory>
 
 </hibernate-configuration>
