@@ -30,3 +30,8 @@ I had issues with the negative unit tests.  At first I did not understand what t
 ##Week 3
 ###2/9/16
 This week I worked on incorporating hibernate into my application with the DAO structure.  I have one user class implemented and working and test running to check it.  I also worked on the database design and what tables will be needed.  I put together the slide presentation for my first extracurricular activity on the Radar Framework and Action-Domain-Responder architectural pattern.
+
+
+##Week 4
+###2/17/16
+I did not get a lot done this past week with work.  However I did find the code review that we did in class extremely helpful.  I got help on the structure of my database and ideas on how to expand the application in the future.  We talked about a few different web services that could be helpful and I have found one that I am looking at and another for login with captchas to verify not a robot.  

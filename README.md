@@ -27,7 +27,7 @@ I enjoy reading and do many of my family however I tend to lend my books or sell
 ###Design
 * [Screen Design](DesignDocuments/ScreenDesign.md)
 * [Application Flow](DesignDocuments/ApplicationFlow.md)
-* Database Design - link to follow
+* [Database Design](DesignDocuments/DatabaseDesign.md)
 
 ###[Project Plan](ProjectPlan.md)
 
