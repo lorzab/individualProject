@@ -35,3 +35,8 @@ This week I worked on incorporating hibernate into my application with the DAO s
 ##Week 4
 ###2/17/16
 I did not get a lot done this past week with work.  However I did find the code review that we did in class extremely helpful.  I got help on the structure of my database and ideas on how to expand the application in the future.  We talked about a few different web services that could be helpful and I have found one that I am looking at and another for login with captchas to verify not a robot.  
+
+##Week 5
+This week I added login authentication to my project.  There will be two different levels of log in admin, and regular user.  The admin will help moderate site and can remove offensive comments and the users can only access their own individual reading logs they can not change anyone elses.
+
+##Week 6

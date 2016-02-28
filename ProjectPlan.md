@@ -30,7 +30,38 @@
 
 ##Week 5
 - Research web service to use (looking at isbndb.com and a captcha for login)
--Journal
+- Weekly journal entry
 - Add authentication/login
 
 ##Week 6
+- Weekly journal entry
+
+##Week 7
+- Weekly journal entry
+
+##Week 8
+- Weekly journal entry
+
+##Week 9
+- Weekly journal entry
+
+##Week 10
+- Weekly journal entry
+
+##Week 11
+- Weekly journal entry
+
+##Week 12
+- Weekly journal entry
+
+##Week 13
+- Weekly journal entry
+
+##Week 14
+- Weekly journal entry
+
+##Week 15
+- Weekly journal entry
+
+##Week 16
+- Weekly journal entry
