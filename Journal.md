@@ -40,3 +40,4 @@ I did not get a lot done this past week with work.  However I did find the code 
 This week I added login authentication to my project.  There will be two different levels of log in admin, and regular user.  The admin will help moderate site and can remove offensive comments and the users can only access their own individual reading logs they can not change anyone elses.
 
 ##Week 6
+I was looking at web services to use and the one I was intrested in is not free.  I am debating paying the $10 to try it out and see if I like it.  Otherwise I am looking at other options but they dont fit quite as nicely. I am not sure what I am going to do there yet.  I tried to deploy to Openshift but could not figure it out.  I need to look more in to that.
