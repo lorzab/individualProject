@@ -48,15 +48,63 @@ public class RoleDaoWithHibernate implements RoleDao{
     @Override
     public void updateRole(Role role) {
 
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+
+        try {
+            tx = session.beginTransaction();
+            session.update(role);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public void deleteRole(Role role) {
 
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+
+        try {
+            tx = session.beginTransaction();
+            session.delete(role);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
     }
 
     @Override
     public int addRole(Role role) {
-        return 0;
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+        Integer id = null;
+        try {
+            tx = session.beginTransaction();
+            id = (Integer) session.save(role);
+            tx.commit();
+            log.info("Added role: " + role + " with id of: " + id);
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            log.error(e);
+        } finally {
+            session.close();
+        }
+        return id;
+
     }
+
+
 }
