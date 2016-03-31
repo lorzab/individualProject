@@ -41,3 +41,11 @@ This week I added login authentication to my project.  There will be two differe
 
 ##Week 6
 I was looking at web services to use and the one I was intrested in is not free.  I am debating paying the $10 to try it out and see if I like it.  Otherwise I am looking at other options but they dont fit quite as nicely. I am not sure what I am going to do there yet.  I tried to deploy to Openshift but could not figure it out.  I need to look more in to that.
+
+
+##Week 9
+Work on getting maven working to incorporate into project.
+
+##Week 10
+* Got maven working
+* Got uploading to openshift working
