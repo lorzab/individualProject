@@ -48,6 +48,7 @@ Incorporate maven into project after deleting jars from downloads file.
 
 ##Week 9
 Work on getting maven working to incorporate into project.
+to get maven build cd to where the POM file is, use mvn instal then take war file created and upload to openshift
 
 ##Week 10
 * Got maven working
