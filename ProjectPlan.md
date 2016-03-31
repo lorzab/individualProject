@@ -34,25 +34,31 @@
 - Add authentication/login
 
 ##Week 6
+- Try uploading to openshift
 - Weekly journal entry
 
 ##Week 7
+- create project in maven 
 - Weekly journal entry
 
 ##Week 8
 - Weekly journal entry
 
 ##Week 9
-- Weekly journal entry
+- Work on getting maven into project working
+- Weekly Journal Entry
 
 ##Week 10
 - Weekly journal entry
+- Upload to openshift
 
 ##Week 11
 - Weekly journal entry
+- Finish DAOs
 
 ##Week 12
 - Weekly journal entry
+- Get jsps done
 
 ##Week 13
 - Weekly journal entry
