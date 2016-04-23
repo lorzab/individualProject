@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.lorabahr.bookshelf.entity.Role" table="role">
+        <meta attribute="class-description">
+            This class contains the user role details.
+        </meta>
+
+        <!-- Add id for the key -->
+        <id name="userName" column="user_name" type="string"></id>
+
+        <!-- properties for other variables/columns -->
+        <property name="role" column="user_role" type="string"/>
+    </class>
+</hibernate-mapping>

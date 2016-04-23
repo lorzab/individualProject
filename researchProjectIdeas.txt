@@ -1,0 +1,9 @@
+Research project to put in individual project ideas:
+maven
+gradel
+spring framework (part of MVC)
+different unit testing framework testNG
+framework JSF
+
+
+have a module that runs in a different language that runs on the jvm, groovy, scala, closure

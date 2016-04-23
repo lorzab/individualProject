@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TheBookshelf:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/TheBookshelf_war</output-path>
+    <root id="archive" name="TheBookshelf_war.war">
+      <element id="artifact" artifact-name="TheBookshelf:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="geronimo-osgi-locator-1.0" />
+          <element id="library" level="project" name="hamcrest-core-1.3" />
+          <element id="library" level="project" name="apache-log4j-1.2" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.38" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
