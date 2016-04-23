@@ -55,6 +55,7 @@ public class RoleDaoWithHibernate implements RoleDao{
             tx = session.beginTransaction();
             session.update(role);
             tx.commit();
+
         } catch (HibernateException e) {
             if (tx != null) {
                 tx.rollback();

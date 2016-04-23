@@ -6,7 +6,7 @@
 <hibernate-mapping>
     <class name="com.lorabahr.bookshelf.entity.Role" table="role">
         <meta attribute="class-description">
-            This class contains the role detail.
+            This class contains the user role details.
         </meta>
 
         <!-- Add id for the key -->
