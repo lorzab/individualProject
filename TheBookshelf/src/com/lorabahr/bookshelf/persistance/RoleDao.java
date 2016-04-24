@@ -1,7 +1,6 @@
 package com.lorabahr.bookshelf.persistance;
 
 import com.lorabahr.bookshelf.entity.Role;
-
 import java.util.List;
 
 /**

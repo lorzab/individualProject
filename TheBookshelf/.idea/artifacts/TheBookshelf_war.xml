@@ -10,6 +10,9 @@
           <element id="library" level="project" name="apache-log4j-1.2" />
           <element id="library" level="project" name="mysql-connector-java-5.1.38" />
         </element>
+        <element id="directory" name="classes">
+          <element id="library" level="project" name="hibernate-release-5.1.0" />
+        </element>
       </element>
     </root>
   </artifact>

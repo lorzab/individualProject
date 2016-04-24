@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="api">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/docs/api" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/backends/jgroups/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/backends/jgroups/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/backends/jms/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/backends/jms/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/build-config/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/build-config/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/engine/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/engine/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/engine-performance/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/jms/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/narayana/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/osgi/karaf-it/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/performance/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/sandbox/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/spring/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/integrationtest/wildfly/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/orm/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/orm/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/serialization/avro/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../UsefulJars/hibernate-search-5.5.2.Final/project/serialization/avro/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
