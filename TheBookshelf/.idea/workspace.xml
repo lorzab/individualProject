@@ -7,9 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09722772-0c45-477a-91cd-2c0f68b01c8a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="09722772-0c45-477a-91cd-2c0f68b01c8a" name="Default" comment="" />
     <ignored path="TheBookshelf.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1110,12 +1108,12 @@
       <workItem from="1461434545267" duration="10000" />
       <workItem from="1461515406788" duration="1799000" />
       <workItem from="1461520975178" duration="1211000" />
-      <workItem from="1461528411760" duration="425000" />
+      <workItem from="1461528411760" duration="477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37005000" />
+    <option name="totallyTimeSpent" value="37057000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
