@@ -1,19 +1,21 @@
 package persistance;
 
 import entity.Role;
+import entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Lora on 2/17/16.
  */
-public class RoleDaoWithHibernate implements RoleDao{
+public class RoleDaoWithHibernate implements RoleDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
@@ -92,10 +94,12 @@ public class RoleDaoWithHibernate implements RoleDao{
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         String userName = "empty";
+        Serializable returnUser = null;
 
         try {
             tx = session.beginTransaction();
-            userName = (String) session.save(role);
+            userName = createUserRole(role).getUserName();
+            session.save(createUserRole(role));
             tx.commit();
             log.info("Added user: " + userName);
         } catch (HibernateException e) {
@@ -108,5 +112,10 @@ public class RoleDaoWithHibernate implements RoleDao{
         return userName;
     }
 
+    private User createUserRole(Role role) {
 
+        User usersRoles = new User();
+        usersRoles.setUserName(role.getUserName());
+        return usersRoles;
+    }
 }

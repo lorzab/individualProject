@@ -1,8 +1,12 @@
 package entity;
 
+import javax.persistence.*;
+
 /**
  * Created by Lora on 5/1/16.
  */
+@Entity
+@Table(name = "reviewList", schema = "BookshelfDB")
 public class ReviewList {
 
     private int review_id;
@@ -25,17 +29,20 @@ public class ReviewList {
         this.rating = rating;
     }
 
+    @Id
+    @Column(name = "review_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public int getReview_id() {return review_id;}
 
     public void setReview_id(int review_id) {this.review_id = review_id;}
+
+
 
     public int getReading_id() {
         return reading_id;
     }
 
-    public void setReading_id(int reading_id) {
-        this.reading_id = reading_id;
-    }
+    public void setReading_id(int reading_id) {this.reading_id = reading_id;}
 
     public int getUser_id() {
         return user_id;

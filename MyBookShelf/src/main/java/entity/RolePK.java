@@ -1,34 +1,16 @@
 package entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
- * Created by Lora on 2/17/16.
+ * Created by Lora on 5/6/16.
  */
-@Entity
-@Table(name = "role", schema = "BookshelfDB", catalog = "")
-@IdClass(RolePK.class)
-public class Role {
-
+public class RolePK implements Serializable {
     private String userName;
     private String role;
 
-    /**
-     * Empty constructor.
-     */
-    public Role() {
-    }
-
-    /**
-     * Constructor with both parameters
-     *
-     * @param userName the userName of the user
-     * @param role what that user can access
-     */
-    public Role(String userName, String role) {
-        this.role = role;
-        this.userName = userName;
-    }
 
     @Id
     @Column(name = "user_name", nullable = false, length = 25)
@@ -57,5 +39,4 @@ public class Role {
                 " ,role='" + role +
                 "'}";
     }
-
 }

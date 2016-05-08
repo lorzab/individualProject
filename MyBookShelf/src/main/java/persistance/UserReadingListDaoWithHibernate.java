@@ -23,19 +23,20 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
+
         try {
             tx = session.beginTransaction();
-            Criteria criteria = session.createCriteria(User.class);
-            List<UserReadingList> usersReadingList = criteria.list();
+            Criteria criteria = session.createCriteria(UserReadingList.class);
+            List<UserReadingList> readingLists = criteria.list();
 
-            for (UserReadingList u: usersReadingList) {
+            for (UserReadingList u: readingLists) {
                 allUsersReadingList.add(u);
             }
 
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null) {
-                e.printStackTrace();
+                log.error(e);
             }
         } finally {
             session.close();
@@ -57,7 +58,7 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
             if (tx != null) {
                 tx.rollback();
             }
-            e.printStackTrace();
+            log.error(e);
         } finally {
             session.close();
         }
@@ -77,7 +78,7 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
             if (tx != null) {
                 tx.rollback();
             }
-            e.printStackTrace();
+            log.error(e);
         } finally {
             session.close();
         }
@@ -103,4 +104,60 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         }
 
     }
+
+    /**
+     * Check to see if a specific book is on the user reading list
+     */
+    public int getReadingIdFromUserAndBook(int userId, int bookId) {
+
+        List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
+        allUsersReadingList = getAllUserReadingList();
+        int readingId = 0;
+
+        for(UserReadingList bookToRead : allUsersReadingList) {
+            //check to see if the user is logged in if not breah
+            if(userId == 0) {
+                break;
+            } else {
+                //see if the user has any books that they have added to wish list
+                if(bookToRead.getUser_id() == userId) {
+                    //if they have book on wish list see if it matches the book they want to see
+                    if(bookToRead.getBook_id() == bookId) {
+                        readingId = bookToRead.getBook_id();
+
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        return readingId;
+    }
+
+    /**
+     * Get books for user
+     */
+    public ArrayList<ArrayList<String>> getUserReadingList(int userId) {
+        List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
+        allUsersReadingList = getAllUserReadingList();
+        ArrayList<ArrayList<String>> userReadingList = new ArrayList<ArrayList<String>>();
+
+        BookDaoWithHibernate book = new BookDaoWithHibernate();
+
+        for(UserReadingList bookToRead : allUsersReadingList) {
+            if(bookToRead.getUser_id() == userId) {
+                int bookId = bookToRead.getBook_id();
+                String dateAdded = bookToRead.getDate_added();
+                int readingId = bookToRead.getReading_id();
+
+                //get book title and author from bookID
+                String title = book.getTitleFromId(bookId);
+                String author = book.getAuthorFromId(bookId);
+                //get notes and recommended from bookId, userId and readingId
+            }
+        }
+    }
+
+
 }

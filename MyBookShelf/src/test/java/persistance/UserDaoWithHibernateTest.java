@@ -26,7 +26,7 @@ public class UserDaoWithHibernateTest {
         getAllUser.setEmailAddress("IrockThis@gmail.com");
         getAllUser.setUserName("LLCoolJ");
         getAllUser.setPassword("password123");
-        getAllUser.setId(0);
+        getAllUser.setUserId(0);
         insertUserId = dao.addUser(getAllUser);
     }
 
@@ -82,7 +82,6 @@ public class UserDaoWithHibernateTest {
         user.setEmailAddress("IronMan@gmail.com");
         user.setUserName("ironMan");
         user.setPassword("hello");
-        user.setId(0);
 
         insertUserId = dao.addUser(user);
 

@@ -1,5 +1,6 @@
 package persistance;
 
+import entity.Role;
 import entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -91,8 +92,9 @@ public class UserDaoWithHibernate implements UserDao {
         try {
             tx = session.beginTransaction();
             id = (Integer) session.save(user);
+            session.save(createUserRole(user));
             tx.commit();
-            log.info("Added user: " + user + " with id of: " + user.getId());
+            log.info("Added user: " + user + " with id of: " + user.getUserId());
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             log.error(e);
@@ -100,5 +102,31 @@ public class UserDaoWithHibernate implements UserDao {
             session.close();
         }
         return id;
+    }
+
+    private Role createUserRole(User user) {
+
+        Role usersRoles = new Role();
+        usersRoles.setUserName(user.getUserName());
+        usersRoles.setRole("regUser");
+        return usersRoles;
+    }
+
+    /**
+     * Get userId from userName
+     */
+    public int getUserIdFromUserName(String userName) {
+        UserDaoWithHibernate user = new UserDaoWithHibernate();
+        List<User> allUsers = new ArrayList<User>();
+        allUsers = user.getAllUsers();
+        int userId = 0;
+        for (User person : allUsers) {
+            if(person.getUserName().equals(userName)){
+                userId = person.getUserId();
+                break;
+            }
+        }
+
+        return userId;
     }
 }

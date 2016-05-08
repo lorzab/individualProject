@@ -67,7 +67,7 @@ public class RoleDaoWithHibernateTest {
     public void testAddRole() throws Exception {
 
         RoleDaoWithHibernate dao = new RoleDaoWithHibernate();
-        String insertRoleId = null;
+        String insertRoleId = "empty";
 
         //create user to add
         Role role = new Role();

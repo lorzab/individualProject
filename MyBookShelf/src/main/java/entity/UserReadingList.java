@@ -1,5 +1,7 @@
 package entity;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.sql.Date;
 
 /**
@@ -24,32 +26,41 @@ public class UserReadingList {
         this.date_added = date_added;
     }
 
-    public int getReadingId() { return reading_id; }
+    public int getReading_id() {
+        return reading_id;
+    }
 
-    public void setReadingId(int reading_id) {
+    public void setReading_id(int reading_id) {
         this.reading_id = reading_id;
     }
 
-    public int getUserId() { return user_id; }
+    public int getUser_id() {
+        return user_id;
+    }
 
-    public void setUserId(int user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
-    public int getBookId() { return book_id; }
+    public int getBook_id() {
+        return book_id;
+    }
 
-    public void setBookId(int book_id) {
+    public void setBook_id(int book_id) {
         this.book_id = book_id;
     }
 
-    public int getWishList() { return wish_list; }
+    public int getWish_list() {
+        return wish_list;
+    }
 
-    public void setWishList(int wish_list) {
+    public void setWish_list(int wish_list) {
         this.wish_list = wish_list;
     }
 
     public String getDate_added (){return date_added;}
 
+    @Temporal(TemporalType.DATE)
     public void setDate_added(String date_added) { this.date_added = date_added; }
 
     @Override

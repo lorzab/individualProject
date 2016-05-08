@@ -2,20 +2,19 @@
   Created by IntelliJ IDEA.
   User: Lora
   Date: 2/17/16
-  Time: 8:48 PM
+  Time: 8:49 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Display</title>
+  <title>Admin</title>
 </head>
 <body>
-<!--All application users can access this page.-->
-
+This is the admin page where fancy admin-only stuff happens.
 <ul>
-  <li><a href="admin.jsp">Take me to the Admin Page</a></li>
-  <li><a href="index.jsp">Take me Home</a></li>
+  <li><a href="display.jsp">Take me to the Display Page</a></li>
+  <li><a href="../index.jsp">Take me Home</a></li>
 </ul>
 </body>
 </html>

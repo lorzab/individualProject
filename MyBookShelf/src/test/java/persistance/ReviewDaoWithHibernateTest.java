@@ -21,10 +21,10 @@ public class ReviewDaoWithHibernateTest {
         //create book for test
         ReviewList getAllReviews = new ReviewList();
         getAllReviews.setReview_id(0);
-        getAllReviews.setBook_id(3);
+        getAllReviews.setBook_id(4);
         getAllReviews.setNotes("This is the best book ever");
-        getAllReviews.setRating(5.0);
-        getAllReviews.setReading_id(3);
+        getAllReviews.setRating(1);
+        getAllReviews.setReading_id(1);
         getAllReviews.setUser_id(3);
         insertReviewId = dao.addReview(getAllReviews);
     }
@@ -67,14 +67,17 @@ public class ReviewDaoWithHibernateTest {
     public void testAddReview() throws Exception {
 
         ReviewListDaoWithHibernate dao = new ReviewListDaoWithHibernate();
+        UserReadingListDaoWithHibernate userReading = new UserReadingListDaoWithHibernate();
+        UserDaoWithHibernate user = new UserDaoWithHibernate();
+
         int insertReviewId = 0;
 
         //create review to add
         ReviewList review = new ReviewList();
-        review.setReading_id(99);
-        review.setUser_id(99);
+        review.setReading_id(1);
+        review.setUser_id(3);
         review.setRating(0);
-        review.setBook_id(99);
+        review.setBook_id(8);
         review.setNotes("Awesome Sauce");
 
         insertReviewId = dao.addReview(review);

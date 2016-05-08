@@ -1,8 +1,14 @@
 package entity;
 
+import org.hibernate.annotations.Columns;
+
+import javax.persistence.*;
+
 /**
  * Created by Lora on 4/24/16.
  */
+@Entity
+@Table(name="book", schema = "BookshelfDB", catalog = "")
 public class Book {
 
     private int id;
@@ -20,6 +26,9 @@ public class Book {
         this.author = author;
     }
 
+    @Id
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -28,6 +37,8 @@ public class Book {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "isbn", nullable = true, length = 12)
     public String getIsbn() {
         return isbn;
     }
@@ -36,6 +47,8 @@ public class Book {
         this.isbn = isbn;
     }
 
+    @Basic
+    @Column(name = "title", nullable = true, length = 225)
     public String getTitle() {
         return title;
     }
@@ -44,6 +57,8 @@ public class Book {
         this.title = title;
     }
 
+    @Basic
+    @Column(name = "author", nullable = true, length = 100)
     public String getAuthor() { return author; }
 
     public void setAuthor(String author) {

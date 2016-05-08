@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1><a href="index.jsp">Look at all Books</a></h1>
+<h1><a href="../index.jsp">Look at all Books</a></h1>
 
 <h2>or</h2>
 

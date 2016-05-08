@@ -23,6 +23,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
+
         try {
             tx = session.beginTransaction();
             Criteria criteria = session.createCriteria(ReviewList.class);
@@ -98,5 +99,38 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
             session.close();
         }
         return id;
+    }
+
+    /**
+     * Get the recomendation % of a book if there is one
+     */
+    public double calcuateRecommendationPercentage(int book_id) {
+        List<ReviewList> allReviews = new ArrayList<ReviewList>();
+        allReviews = getAllReviews();
+
+        int count = 0;
+        int rating = 0;
+        double recommendatedPercentage = 0;
+
+        for (ReviewList review : allReviews) {
+
+            if(review.getBook_id() == book_id) {
+                count++;
+                rating += review.getRating();
+            }
+        }
+
+        log.info("count: " + count);
+        log.info("rating: " + rating);
+
+        if (count != 0) {
+            recommendatedPercentage = (rating / count);
+
+        }
+
+        log.info("recommendationPercentage: " + recommendatedPercentage);
+
+        return recommendatedPercentage;
+
     }
 }

@@ -11,13 +11,12 @@
   <title>My Bookshelf</title>
 </head>
 <body>
-<p><a href="myBookshelf.jsp">My Bookshelf</a></p>
+<p><a href="/goto-my-bookshelf">My Bookshelf</a></p>
 <h1>Welcome to the Bookshelf</h1>
 
-<h3><a href="search.jsp">Search by Genre</a></h3>
-<h3><a href="search.jsp">Search by Title</a></h3>
-<h3><a href="search.jsp">Search by Author</a></h3>
-<h3><a href="search.jsp">Go to all Books</a></h3>
+<h3><a href="/goto-search?searchType=title">Search by Title</a></h3>
+<h3><a href="/goto-search?searchType=author">Search by Author</a></h3>
+<h3><a href="/goto-search?searchType=allBooks">Go to all Books</a></h3>
 
 
 </body>
