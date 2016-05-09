@@ -14,25 +14,31 @@
 
 <h1>Add Book</h1>
 
-<form>
-    <label for="title">Title:</label>
-    <input type="text" id="title" />
+<form action="/goto-my-book-added" method="GET">
 
-    <label for="isbn">ISBN:</label>
-    <input type="text" id="isbn" />
+    <label>Title:</label>
+    <input type="text" name="title" />
+    <br />
 
-    <label for="author">Author:</label>
-    <input type="text" id="author" />
+    <label>ISBN:</label>
+    <input type="text" name="isbn" />
+    <br />
+
+    <label>Author:</label>
+    <input type="text" name="author" />
+    <br />
 
     <label>Recommend:</label>
-    <input type="radio" id="ratingYes" name="rating" value="Yes" />
-    <input type="radio" id="ratingNo" name="rating" value="No" />
+    <label>Yes</label><input type="radio" name="rating" value="Yes" />
+    <label>No</label><input type="radio" name="rating" value="No" />
+    <br />
 
-    <label for="notes">Notes:</label>
-    <input type="textarea" id="notes" />
+    <label>Notes:</label>
+    <input type="textarea" name="notes" />
+    <br />
 
-    <input type="button" id="add" value="add" />
-    <input type="button" id="cancle" value="cancle" />
+    <input type="submit" id="submit" value="submit" />
+    <a href="/goto-my-bookshelf">Back</a>
 </form>
 
 </body>

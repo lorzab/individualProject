@@ -74,7 +74,6 @@ public class UserReadingListWithHibernateTest {
         int insertReadingListId = 0;
 
         //create readinglist to add
-        readingList.setReading_id(1);
         readingList.setUser_id(3);
         readingList.setBook_id(8);
         readingList.setWish_list(1);

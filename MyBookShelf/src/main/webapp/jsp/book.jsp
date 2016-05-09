@@ -24,16 +24,30 @@ ISBN ${isbn} <br />
 Recommencation Percentage ${recommencationPercentage} <br />
 
 <c:if test="${userName != null}">
-<form action="../goto-book-changed-wishlist" method="GET">
+  <c:if test="${!hasReadBook.equals(true)}">
+    <form action="../goto-book-changed-wishlist" method="GET">
 
-  <c:if test="${onWishList == 'false'}">
-    Add to reading list <input type="checkbox" name="wishList" value="yes" />
-  </c:if>
-  <c:if test="${onWishList == 'true'}">
-    Remove from reading list <input type="checkbox" name="wishList" value="no" />
-  </c:if>
+    <c:if test="${onWishList == 'false'}">
+      Add to reading list <input type="checkbox" name="wishList" value="yes" />
+    </c:if>
+    <c:if test="${onWishList == 'true'}">
+      Remove from reading list <input type="checkbox" name="wishList" value="no" />
+    </c:if>
     <input type="submit" name="submit" value="submit">
+      </form>
+  </c:if>
+    <c:if test="${hasReadBook.equals(true)}">
+      You have read this book already
+      <c:if test="${onWishList == 'false'}">
+        <form action="../goto-book-changed-wishlist" method="GET">
+          , want to read again?</br>
+          Add to reading list <input type="checkbox" name="wishList" value="yes" />
+          <input type="submit" name="submit" value="submit">
+        </form>
+      </c:if>
+    </c:if>
 </c:if>
+
 
 
 

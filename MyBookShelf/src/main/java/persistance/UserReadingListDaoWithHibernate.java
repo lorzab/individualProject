@@ -188,5 +188,24 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         return userReadingList;
     }
 
+    /**
+     * check to see if a person has read a book
+     */
+    public boolean hasUserReadBook(int userId, int bookId) {
+        List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
+        allUsersReadingList = getAllUserReadingList();
+        boolean hasReadBook = false;
+
+        for(UserReadingList readingList : allUsersReadingList) {
+            if(readingList.getUser_id() == userId) {
+                if(readingList.getBook_id() == bookId) {
+                    if(readingList.getWish_list() == 0) {
+                        hasReadBook = true;
+                    }
+                }
+            }
+        }
+        return hasReadBook;
+    }
 
 }

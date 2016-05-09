@@ -98,6 +98,10 @@ public class ToBook extends HttpServlet {
         log.info("bookId: " + id);
         log.info("wantToRead " + wantToRead);
 
+        //has the user read the book
+        UserReadingListDaoWithHibernate readingList = new UserReadingListDaoWithHibernate();
+        boolean hasReadBook = readingList.hasUserReadBook(userId, id);
+
         session.setAttribute("book", title);
         session.setAttribute("author", author);
         session.setAttribute("isbn", isbn);
@@ -105,6 +109,7 @@ public class ToBook extends HttpServlet {
         session.setAttribute("bookId", id);
         session.setAttribute("onWishList", wantToRead);
         session.setAttribute("readingId", readingId);
+        session.setAttribute("hasReadBook", hasReadBook);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

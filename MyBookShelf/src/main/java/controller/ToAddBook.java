@@ -17,10 +17,10 @@ import java.util.ArrayList;
  * Created by Lora on 5/8/16.
  */
 @WebServlet(
-        name = "goToMyReadingList",
-        urlPatterns = { "/goto-my-reading-list" }
+        name = "goToAddBook",
+        urlPatterns = { "/goto-my-add-book" }
 )
-public class ToMyReadingList extends HttpServlet{
+public class ToAddBook extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
@@ -30,17 +30,7 @@ public class ToMyReadingList extends HttpServlet{
         //get the session object
         HttpSession session = request.getSession();
 
-        //get user from session
-        int userId = (Integer) session.getAttribute("userId");
-
-        //get all books on my reading list, not including wishlist
-        UserReadingListDaoWithHibernate allReadingList = new UserReadingListDaoWithHibernate();
-        ArrayList<ArrayList<String>> myBooks = new ArrayList<ArrayList<String>>();
-        myBooks = allReadingList.getUserReadingList(userId, 1);
-
-        session.setAttribute("myBooks", myBooks);
-
-        String urlForward = "/jsp/myReadingList.jsp";
+        String urlForward = "/jsp/addBook.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

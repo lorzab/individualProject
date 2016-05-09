@@ -37,7 +37,7 @@ public class ToMyBooks extends HttpServlet {
         //get all books on my reading list, not including wishlist
         UserReadingListDaoWithHibernate allReadingList = new UserReadingListDaoWithHibernate();
         ArrayList<ArrayList<String>> myBooks = new ArrayList<ArrayList<String>>();
-        myBooks = allReadingList.getUserReadingList(userId, 1);
+        myBooks = allReadingList.getUserReadingList(userId, 0);
 
         session.setAttribute("myBooks", myBooks);
 

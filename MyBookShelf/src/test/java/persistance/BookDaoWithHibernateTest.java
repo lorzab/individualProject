@@ -71,7 +71,6 @@ public class BookDaoWithHibernateTest {
 
         //create user to add
         Book book = new Book();
-        book.setId(0);
         book.setAuthor("Lora Bahr");
         book.setTitle("This is my life");
         book.setIsbn("HelloWorld");
