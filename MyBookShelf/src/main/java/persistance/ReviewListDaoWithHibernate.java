@@ -133,4 +133,53 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         return recommendatedPercentage;
 
     }
+
+    /**
+     * Get notes from bookId, userId, readingId
+     */
+    public String getNotesFromReview(int bookId, int userId, int readingId){
+        List<ReviewList> allReviews = new ArrayList<ReviewList>();
+        allReviews = getAllReviews();
+        String notes = "";
+
+        //log.info("in review");
+
+        for(ReviewList review : allReviews) {
+            //log.info(review.getBook_id());
+            //log.info(bookId);
+
+            if(review.getBook_id() == bookId) {
+                log.info("in book check");
+                if(review.getUser_id() == userId) {
+                    log.info("in user check");
+                    if(review.getReading_id() == readingId) {
+                        notes = review.getNotes();
+                        log.info("notes: " + notes);
+                    }
+                }
+            }
+        }
+        return notes;
+    }
+
+    /**
+     * Get rating of book from userId, bookId, readingId
+     * @return
+     */
+    public double getRatingFromReview(int bookId, int userId, int readingId) {
+        List<ReviewList> allReviews = new ArrayList<ReviewList>();
+        allReviews = getAllReviews();
+        double rating = 0;
+
+        for(ReviewList review : allReviews) {
+            if(review.getBook_id() == bookId) {
+                if(review.getUser_id() == userId) {
+                    if(review.getReading_id() == readingId) {
+                        rating = review.getRating();
+                    }
+                }
+            }
+        }
+        return rating;
+    }
 }

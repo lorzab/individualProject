@@ -170,6 +170,66 @@ public class BookDaoWithHibernate implements BookDao{
         return bookInfo;
     }
 
+    /*public ArrayList<ArrayList<Map>> searchTitle(String title) {
+        List<Book> allBooks = new ArrayList<Book>();
+        allBooks = getAllBooks();
+
+        Map<String, Integer> bookId = new HashMap<String, Integer>();
+        Map<String, String> titleMap = new HashMap<String, String>();
+        Map<String, String> author = new HashMap<String, String>();
+        ArrayList<Map> bookInfo = new ArrayList<Map>();
+        ArrayList<ArrayList<Map>> books = new ArrayList<ArrayList<Map>>();
+
+        for(Book book : allBooks) {
+
+            log.info("book dao");
+
+            if(book.getTitle().equals(title)){
+                bookId.put("bookId", book.getId());
+                titleMap.put("title", title);
+                author.put("author", book.getAuthor());
+                log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
+                bookInfo.add(bookId);
+                bookInfo.add(titleMap);
+                bookInfo.add(author);
+
+                books.add(bookInfo);
+            }
+        }
+
+        return  books;
+    }
+
+
+
+    public ArrayList<ArrayList<Map>> searchAllBookTitles() {
+        List<Book> allBooks = new ArrayList<Book>();
+        allBooks = getAllBooks();
+
+        log.info("Number of books" +allBooks.size());
+
+        Map<String, Integer> bookId = new HashMap<String, Integer>();
+        Map<String, String> title = new HashMap<String, String>();
+        Map<String, String> author = new HashMap<String, String>();
+        ArrayList<Map> bookInfo = new ArrayList<Map>();
+        ArrayList<ArrayList<Map>> books = new ArrayList<ArrayList<Map>>();
+
+        for(Book book : allBooks) {
+            bookId.put("bookId", book.getId());
+            title.put("title", book.getTitle());
+            author.put("author", book.getAuthor());
+            //log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
+
+            bookInfo.add(bookId);
+            bookInfo.add(title);
+            bookInfo.add(author);
+
+            books.add(bookInfo);
+        }
+
+        return books;
+    }*/
+
     /**
      * Get book title from ID
      */

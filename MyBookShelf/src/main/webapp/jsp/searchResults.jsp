@@ -10,6 +10,7 @@
 <html>
 <head>
     <title></title>
+
 </head>
 
 <c:choose>
@@ -21,50 +22,53 @@
     </c:if>
 
     <c:if test="${!searchResults.isEmpty()}">
-<table>
-      <tr>
-        <th>${author}</th>
-      </tr>
-      <c:forEach var="result" items="${searchResults}">
-
-          <c:forEach items="${result}" var="book">
-            <tr>
-              <td><a href="/goto-book?bookID=${book.key}"><c:out value="${book.value}" /></a></td>
-            </tr>
+      <table>
+        <thead>
+          <tr>
+            <th>${author}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <c:forEach var="result" items="${searchResults}">
+            <c:forEach items="${result}" var="book">
+              <tr>
+                <td><a href="/goto-book?bookID=${book.key}">${book.value}"</a></td>
+              </tr>
+            </c:forEach>
           </c:forEach>
-
-
-      </c:forEach>
-  </table>
+        </tbody>
+      </table>
     </c:if>
   </c:when>
   <c:otherwise>
+
     <c:if test="${searchResults.isEmpty()}">
       <h3>There were no books that match that title</h3>
       <h3><a href="index.jsp">Search Again</a></h3>
     </c:if>
 
     <c:if test="${!searchResults.isEmpty()}">
-    <table>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-      </tr>
-
-      <c:forEach items="${searchResults}" var="maps">
-
-        <c:forEach items="${maps}" var="mapItem">
-          <tr>
-        <td><a href="/goto-book?bookID=${mapItem.key}">
-          <c:forEach items="${mapItem.value}" var="book">
-            ${book.key}</a></td>
-            <td>${book.value}</td>
+      <table>
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${searchResults}" var="maps">
+          <c:forEach items="${maps}" var="mapItem">
+            <tr>
+              <td><a href="/goto-book?bookID=${mapItem.key}">
+                <c:forEach items="${mapItem.value}" var="book">
+                  ${book.key}</a></td>
+              <td>${book.value}</td>
+              </c:forEach>
+            </tr>
           </c:forEach>
-      </tr>
         </c:forEach>
-      </c:forEach>
-
-    </table>
+        </tbody>
+      </table>
     </c:if>
   </c:otherwise>
 </c:choose>

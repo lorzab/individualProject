@@ -1,5 +1,6 @@
 package controller;
 
+import org.apache.log4j.Logger;
 import persistance.BookDaoWithHibernate;
 
 import javax.servlet.RequestDispatcher;
@@ -25,6 +26,8 @@ import java.util.Map;
 )
 public class ToSearchResults extends HttpServlet {
 
+    private final Logger log = Logger.getLogger(this.getClass());
+
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -36,7 +39,7 @@ public class ToSearchResults extends HttpServlet {
 
         //create element to hold search results
         ArrayList<Map<Integer, String>> authorSearchResults = new ArrayList<Map<Integer, String>>();
-        ArrayList<Map<Integer, Map<String, String>>> allTitles = new ArrayList<Map<Integer, Map<String, String>>>();
+        ArrayList<Map<Integer ,Map<String, String>>> allTitles = new ArrayList<Map<Integer ,Map<String, String>>>();
         BookDaoWithHibernate books = new BookDaoWithHibernate();
 
         if(searchType.equals("author")) {
@@ -50,6 +53,7 @@ public class ToSearchResults extends HttpServlet {
         } else if (searchType.equals("title")) {
             String title = request.getParameter("titileSearch");
             allTitles = books.searchTitle(title);
+            log.info("in title search");
             session.setAttribute("searchResults", allTitles);
         } else {
             allTitles = books.searchAllBookTitles();

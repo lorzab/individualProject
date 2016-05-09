@@ -138,25 +138,54 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
     /**
      * Get books for user
      */
-    public ArrayList<ArrayList<String>> getUserReadingList(int userId) {
+    public ArrayList<ArrayList<String>> getUserReadingList(int userId, int wantToSeeWishList) {
         List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
         allUsersReadingList = getAllUserReadingList();
         ArrayList<ArrayList<String>> userReadingList = new ArrayList<ArrayList<String>>();
+        ArrayList<String> bookInfo = new ArrayList<String>();
 
         BookDaoWithHibernate book = new BookDaoWithHibernate();
+        ReviewListDaoWithHibernate review = new ReviewListDaoWithHibernate();
 
         for(UserReadingList bookToRead : allUsersReadingList) {
             if(bookToRead.getUser_id() == userId) {
-                int bookId = bookToRead.getBook_id();
-                String dateAdded = bookToRead.getDate_added();
-                int readingId = bookToRead.getReading_id();
+                int wishList = bookToRead.getWish_list();
 
-                //get book title and author from bookID
-                String title = book.getTitleFromId(bookId);
-                String author = book.getAuthorFromId(bookId);
-                //get notes and recommended from bookId, userId and readingId
+                //if book is on the wish list dont show
+                if (wishList == wantToSeeWishList) {
+                    log.info(bookToRead.getBook_id());
+                    int bookId = bookToRead.getBook_id();
+
+                    String dateAdded = bookToRead.getDate_added();
+                    int readingId = bookToRead.getReading_id();
+
+                    //get book title and author from bookID
+                    String title = book.getTitleFromId(bookId);
+                    String author = book.getAuthorFromId(bookId);
+                    //get notes and recommended from bookId, userId and readingId
+                    String notes = review.getNotesFromReview(bookId, userId, readingId);
+                    int rating = (int) review.getRatingFromReview(bookId, userId, readingId);
+
+                    String recommended = "Yes";
+                    if (rating != 1) {
+                        recommended = "No";
+                    }
+
+                    String bookIdString = Integer.toString(bookId);
+                    //log.info(bookIdString);
+
+                    bookInfo.add(bookIdString);
+                    bookInfo.add(title);
+                    bookInfo.add(author);
+                    bookInfo.add(notes);
+                    bookInfo.add(recommended);
+                    bookInfo.add(dateAdded);
+                    userReadingList.add(bookInfo);
+                }
             }
         }
+        log.info(userReadingList.size());
+        return userReadingList;
     }
 
 

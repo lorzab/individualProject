@@ -1,6 +1,5 @@
 package controller;
 
-import entity.UserReadingList;
 import org.apache.log4j.Logger;
 import persistance.UserReadingListDaoWithHibernate;
 
@@ -18,10 +17,10 @@ import java.util.ArrayList;
  * Created by Lora on 5/8/16.
  */
 @WebServlet(
-        name = "goToMyBooks",
-        urlPatterns = { "/goto-my-books" }
+        name = "goToMyReadingList",
+        urlPatterns = { "/goto-my-reading-list" }
 )
-public class ToMyBooks extends HttpServlet {
+public class ToMyReadingList extends HttpServlet{
 
     private final Logger log = Logger.getLogger(this.getClass());
 
@@ -37,11 +36,11 @@ public class ToMyBooks extends HttpServlet {
         //get all books on my reading list, not including wishlist
         UserReadingListDaoWithHibernate allReadingList = new UserReadingListDaoWithHibernate();
         ArrayList<ArrayList<String>> myBooks = new ArrayList<ArrayList<String>>();
-        myBooks = allReadingList.getUserReadingList(userId, 1);
+        myBooks = allReadingList.getUserReadingList(userId, 0);
 
         session.setAttribute("myBooks", myBooks);
 
-        String urlForward = "/jsp/myBooks.jsp";
+        String urlForward = "/jsp/myReadingList.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);
