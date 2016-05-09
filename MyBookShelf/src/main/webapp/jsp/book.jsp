@@ -37,10 +37,9 @@ Recommencation Percentage ${recommencationPercentage} <br />
       </form>
   </c:if>
     <c:if test="${hasReadBook.equals(true)}">
-      You have read this book already
+      You have read this book already, want to read again?</br>
       <c:if test="${onWishList == 'false'}">
         <form action="../goto-book-changed-wishlist" method="GET">
-          , want to read again?</br>
           Add to reading list <input type="checkbox" name="wishList" value="yes" />
           <input type="submit" name="submit" value="submit">
         </form>

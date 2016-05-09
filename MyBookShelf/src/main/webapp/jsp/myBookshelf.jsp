@@ -16,7 +16,7 @@
 
 <h3><a href="/goto-my-books">My Books</a></h3>
 <h3><a href="/goto-my-reading-list">Reading List</a></h3>
-<h3>Get Recommended Books</h3>
+<h3><a href="/goto-get-recommended-books">Get Recommended Books</a></h3>
 <h3><a href="../index.jsp">Search Shelves</a></h3>
 <h3><a href="/goto-my-add-book">Add Book</a></h3>
 

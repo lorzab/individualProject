@@ -182,4 +182,41 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         }
         return rating;
     }
+
+    /**
+     * Get the list of books what have a recommended % better than 50%
+     */
+    public ArrayList<ArrayList> getRecommendedBooksUserHasNotRead(int userId) {
+        List<ReviewList> allReviews = new ArrayList<ReviewList>();
+        allReviews = getAllReviews();
+        BookDaoWithHibernate book = new BookDaoWithHibernate();
+        ArrayList bookInfo = new ArrayList();
+        ArrayList<ArrayList> allRecommendatedBooks = new ArrayList<ArrayList>();
+        double recommendationPercentage = .3;
+
+
+        for(ReviewList review : allReviews) {
+            //check to make sure the user did write the review
+            if(review.getUser_id() != userId) {
+                double recommendatingRating = calcuateRecommendationPercentage(review.getBook_id());
+
+                if(recommendatingRating > recommendationPercentage) {
+                    //return array of title, author, note, recommendationPercentage,
+                    int bookId = review.getBook_id();
+                    String title = book.getTitleFromId(bookId);
+                    String author = book.getAuthorFromId(bookId);
+                    String note = review.getNotes();
+
+                    bookInfo.add(bookId);
+                    bookInfo.add(title);
+                    bookInfo.add(author);
+                    bookInfo.add(note);
+                    bookInfo.add(recommendatingRating);
+
+                    allRecommendatedBooks.add(bookInfo);
+                }
+            }
+        }
+        return allRecommendatedBooks;
+    }
 }
