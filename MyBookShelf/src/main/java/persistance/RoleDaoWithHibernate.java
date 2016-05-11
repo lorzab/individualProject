@@ -19,6 +19,10 @@ public class RoleDaoWithHibernate implements RoleDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Get all of the roles available
+     * @return all of the roles available
+     */
     @Override
     public List<Role> getAllRoles() {
 
@@ -47,6 +51,10 @@ public class RoleDaoWithHibernate implements RoleDao {
         return allRoles;
     }
 
+    /**
+     * Update a role
+     * @param role the role to be updated
+     */
     @Override
     public void updateRole(Role role) {
 
@@ -68,6 +76,10 @@ public class RoleDaoWithHibernate implements RoleDao {
         }
     }
 
+    /**
+     * Delete a role
+     * @param role the role to be deleted
+     */
     @Override
     public void deleteRole(Role role) {
 
@@ -89,6 +101,11 @@ public class RoleDaoWithHibernate implements RoleDao {
 
     }
 
+    /**
+     * Add a role
+     * @param role the role to be added
+     * @return the user name for that role
+     */
     @Override
     public String addRole(Role role) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -112,6 +129,11 @@ public class RoleDaoWithHibernate implements RoleDao {
         return userName;
     }
 
+    /**
+     * Used to manage the complex primary key
+     * @param role
+     * @return
+     */
     private User createUserRole(Role role) {
 
         User usersRoles = new User();

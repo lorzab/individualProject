@@ -3,7 +3,6 @@ package controller;
 import entity.Book;
 import org.apache.log4j.Logger;
 import persistance.BookDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +16,9 @@ import java.util.List;
 
 /**
  * Created by Lora on 5/9/16.
+ *
+ * This servlet takes the approved book information and updates the database to the book being approved and
+ * takes you to a confimation page
  */
 @WebServlet(
         name = "goToApprovedBooks",
@@ -41,7 +43,7 @@ public class ToBooksApproved extends HttpServlet {
         ArrayList<ArrayList> approvedBooks = new ArrayList<ArrayList>();
         ArrayList bookInfo = new ArrayList();
 
-        //go throug the list of all nonapproved books
+        //go through the list of all nonapproved books
         for(ArrayList abook : nonApprovedBooks) {
             int bookId = (Integer) abook.get(0);
             String bookIdString = Integer.toString(bookId);

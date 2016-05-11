@@ -13,7 +13,17 @@ body
 }
 
 table {
+
   margin: 2em;
+  padding: .5em;
+}
+
+tr {
+  padding: 10px;
+}
+
+form {
+  text-align: center;
 }
 
 p

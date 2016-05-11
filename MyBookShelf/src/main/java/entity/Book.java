@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 /**
  * Created by Lora on 4/24/16.
+ *
+ * This is the book entity
  */
 @Entity
 @Table(name="book", schema = "BookshelfDB", catalog = "")

@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Lora on 5/8/16.
+ *
+ * Takes you to all of the books that you have read and added
  */
 @WebServlet(
         name = "goToMyBooks",

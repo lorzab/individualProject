@@ -2,7 +2,6 @@ package controller;
 
 import org.apache.log4j.Logger;
 import persistance.BookDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +14,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Lora on 5/9/16.
+ *
+ * Gets the books that need to be approved by the admin role
  */
 @WebServlet(
         name = "goToBookApproveBooks",

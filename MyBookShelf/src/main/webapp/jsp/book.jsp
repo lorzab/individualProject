@@ -44,7 +44,7 @@
     <c:if test="${hasReadBook.equals(true)}">
       <h3>You have read this book already, want to read again?</h3>
       <c:if test="${onWishList == 'false'}">
-        <form action="../goto-book-changed-wishlist" method="GET">
+        <form action="/goto-book-changed-wishlist" method="GET">
           <h3>Add to reading list</h3> <input type="checkbox" name="wishList" value="yes" />
           <input type="submit" name="submit" value="submit">
         </form>

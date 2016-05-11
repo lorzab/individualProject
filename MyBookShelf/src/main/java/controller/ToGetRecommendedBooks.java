@@ -13,6 +13,8 @@ import java.io.IOException;
 
 /**
  * Created by Lora on 5/8/16.
+ *
+ * Takes you to a page where you can get recommended books that have a certain percentage of recommendations
  */
 @WebServlet(
         name = "goToGetRecommendedBooks",

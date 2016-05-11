@@ -18,6 +18,11 @@ public class BookDaoWithHibernate implements BookDao{
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Method to get all books from the database
+     *
+     * @return all books in the database
+     */
     @Override
     public List<Book> getAllBooks() {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -43,6 +48,11 @@ public class BookDaoWithHibernate implements BookDao{
         return allBooks;
     }
 
+    /**
+     * Update the database with information for this book
+     *
+     * @param book the object to be updated
+     */
     @Override
     public void updateBook(Book book){
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -62,6 +72,11 @@ public class BookDaoWithHibernate implements BookDao{
         }
     }
 
+    /**
+     * Delete a row from the database
+     *
+     * @param book object to be deleted
+     */
     @Override
     public void deleteBook(Book book) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -81,6 +96,12 @@ public class BookDaoWithHibernate implements BookDao{
         }
     }
 
+    /**
+     * Add a new row to the database
+     *
+     * @param book object to be added
+     * @return the id of the book
+     */
     @Override
     public int addBook(Book book) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -102,8 +123,9 @@ public class BookDaoWithHibernate implements BookDao{
 
     /**
      * Get all the books by one author
-     * @param author
-     * @return
+     *
+     * @param author name to search for in the database
+     * @return return all of the books by this author
      */
     public ArrayList<ArrayList> getBooksByAuthor(String author) {
         List<Book> allBooks = new ArrayList<Book>();
@@ -125,7 +147,11 @@ public class BookDaoWithHibernate implements BookDao{
         return booksByAuthor;
     }
 
-
+    /**
+     * Search the database for a book by this title
+     * @param title title to be searched for
+     * @return return all books that have this title
+     */
     public ArrayList<ArrayList> searchTitle(String title) {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
@@ -152,7 +178,11 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
 
-
+    /**
+     * Get all books in the database in an arrayList
+     *
+     * @return an ArrayList of all of the attributes of the book
+     */
     public ArrayList<ArrayList> searchAllBookTitles() {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
@@ -163,7 +193,7 @@ public class BookDaoWithHibernate implements BookDao{
         ArrayList<ArrayList> books = new ArrayList<ArrayList>();
 
         for(Book book : allBooks) {
-            //log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
+            log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
 
             bookInfo.add(book.getId());
             bookInfo.add(book.getTitle());
@@ -176,7 +206,9 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get book title from ID
+     * Get book title from bookID
+     * @param bookId the id of the book to be searched
+     * @return the title of the book to match the id given
      */
     public String getTitleFromId(int bookId) {
         List<Book> allBooks = new ArrayList<Book>();
@@ -193,7 +225,9 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get book author from ID
+     * Get book author from bookID
+     * @param bookId to be searched
+     * @return the author that matches the book id
      */
     public String getAuthorFromId(int bookId) {
         List<Book> allBooks = new ArrayList<Book>();
@@ -211,6 +245,7 @@ public class BookDaoWithHibernate implements BookDao{
 
     /**
      * Get nonapproved books for approval
+     * @return all of the books that have not been approved by the admin yet
      */
     public ArrayList<ArrayList<String>> getNonApprovedBooks() {
         List<Book> allBooks = new ArrayList<Book>();
@@ -236,7 +271,8 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get a random book
+     * Get a random book from the index chosen by a random number
+     * @return a random book
      */
     public ArrayList getRandomBook() {
         List<Book> allBooks = new ArrayList<Book>();

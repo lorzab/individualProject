@@ -2,7 +2,6 @@ package controller;
 
 import org.apache.log4j.Logger;
 import persistance.ReviewListDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +14,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Lora on 5/8/16.
+ *
+ * This gets all of the books that are recommened over a certain percentage and displays them on screen
  */
 @WebServlet(
         name = "goToRecommendedBooks",

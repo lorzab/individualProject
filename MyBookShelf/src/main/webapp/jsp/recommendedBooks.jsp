@@ -31,14 +31,12 @@
   </thead>
   <tbody>
   <c:forEach items="${recommendedBooks}" var="books">
-    <c:forEach items="${books}" var="mapItem">
       <tr>
         <td><a href="/goto-book?bookID=${books[0]}">${books[1]}</a></td>
         <td>${books[2]}</td>
         <td>${books[3]}</td>
         <td>${books[4]}</td>
       </tr>
-    </c:forEach>
   </c:forEach>
   </tbody>
 </table>

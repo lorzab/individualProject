@@ -11,6 +11,8 @@ import java.io.IOException;
 
 /**
  * Created by Lora on 5/6/16.
+ *
+ * Takes you to the search page and shows you only the option you picked from the index page
  */
 @WebServlet(
         name = "goToSearch",
@@ -29,7 +31,6 @@ public class ToSearch extends HttpServlet {
         //get the session object
         HttpSession session = request.getSession();
         session.setAttribute("searchType", searchType);
-
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

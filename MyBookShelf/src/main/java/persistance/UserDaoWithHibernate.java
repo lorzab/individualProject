@@ -17,6 +17,10 @@ public class UserDaoWithHibernate implements UserDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Get all of the users from the database
+     * @return
+     */
     @Override
     public List<User> getAllUsers() {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -42,6 +46,11 @@ public class UserDaoWithHibernate implements UserDao {
         return allUsers;
     }
 
+    /**
+     * Update a user in the database
+     * @param user the user to be updated
+     * @throws HibernateException
+     */
     @Override
     public void updateUser(User user) throws HibernateException{
 
@@ -62,6 +71,10 @@ public class UserDaoWithHibernate implements UserDao {
         }
     }
 
+    /**
+     * Delete a user from the database
+     * @param user the user to be deleted
+     */
     @Override
     public void deleteUser(User user) {
 
@@ -82,6 +95,11 @@ public class UserDaoWithHibernate implements UserDao {
         }
     }
 
+    /**
+     * Add a user to the database
+     * @param user the user to be added to the database
+     * @return return the userId
+     */
     @Override
     public int addUser(User user) {
 
@@ -104,6 +122,11 @@ public class UserDaoWithHibernate implements UserDao {
         return id;
     }
 
+    /**
+     * integrate with the role
+     * @param user the primary key in the role table
+     * @return the role of the username
+     */
     private Role createUserRole(User user) {
 
         Role usersRoles = new Role();
@@ -114,6 +137,8 @@ public class UserDaoWithHibernate implements UserDao {
 
     /**
      * Get userId from userName
+     * @param userName the name to get the userid for
+     * @return the userId
      */
     public int getUserIdFromUserName(String userName) {
         UserDaoWithHibernate user = new UserDaoWithHibernate();

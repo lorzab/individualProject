@@ -16,6 +16,10 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Get all of the reviews from the database
+     * @return all of the reviews from the database
+     */
     @Override
     public List<ReviewList> getAllReviews() {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -42,6 +46,10 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         return allReviews;
     }
 
+    /**
+     * Update a review in the database
+     * @param review item to be updated
+     */
     @Override
     public void updateReview(ReviewList review) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -61,6 +69,10 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         }
     }
 
+    /**
+     * delete a review from the database
+     * @param review item to be deleted
+     */
     @Override
     public void deleteReview(ReviewList review) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -80,6 +92,11 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         }
     }
 
+    /**
+     * Add a review to the database
+     * @param review item to be added
+     * @return reviewId
+     */
     @Override
     public int addReview(ReviewList review) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -100,7 +117,9 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
     }
 
     /**
-     * Get the recomendation % of a book if there is one
+     * Get the recomendation % of a book if there are any recommendations for it
+     * @param book_id book to get the percentage from
+     * @return recommendation percentage from readers
      */
     public double calcuateRecommendationPercentage(int book_id) {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
@@ -122,7 +141,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         log.info("rating: " + rating);
 
         if (count != 0) {
-            recommendatedPercentage = (rating / count);
+            recommendatedPercentage = (rating / count) * 100;
 
         }
 
@@ -134,6 +153,10 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
 
     /**
      * Get notes from bookId, userId, readingId
+     * @param bookId the book to be searched for
+     * @param userId the user that reviewed the book
+     * @param readingId the id of when the book was added on a reading list
+     * @return the notes that were given for the review
      */
     public String getNotesFromReview(int bookId, int userId, int readingId){
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
@@ -162,7 +185,10 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
 
     /**
      * Get rating of book from userId, bookId, readingId
-     * @return
+     * @param bookId the book to be searched for
+     * @param userId the user who reviewed the book
+     * @param readingId the readinglist that the book is on
+     * @return the rating that the user gave the book
      */
     public double getRatingFromReview(int bookId, int userId, int readingId) {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
@@ -183,6 +209,10 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
 
     /**
      * Get reviewId from userId, bookId, readingId
+     * @param bookId the book to be searched for
+     * @param userId the user that gave the review
+     * @param readingId the reading list that it is from
+     * @return the review id for the review written
      */
     public int getReviewIdFromForeignKeys(int bookId, int userId, int readingId) {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
@@ -203,6 +233,8 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
 
     /**
      * Get the list of books what have a recommended % better than 50%
+     * @param userId the user that needs recommendations
+     * @return the list of books over the percentage that the user has not read
      */
     public ArrayList<ArrayList> getRecommendedBooksUserHasNotRead(int userId) {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
@@ -210,7 +242,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         BookDaoWithHibernate book = new BookDaoWithHibernate();
         ArrayList bookInfo = new ArrayList();
         ArrayList<ArrayList> allRecommendatedBooks = new ArrayList<ArrayList>();
-        double recommendationPercentage = .3;
+        double recommendationPercentage = .5;
 
 
         for(ReviewList review : allReviews) {
@@ -240,7 +272,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
 
     /**
      * Get reviews to look over
-     * @return
+     * @return the reviews to be looked over
      */
     public ArrayList<ArrayList<String>> getReviewsToModerate() {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();

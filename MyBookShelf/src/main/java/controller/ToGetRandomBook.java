@@ -13,6 +13,8 @@ import java.io.IOException;
 
 /**
  * Created by Lora on 5/9/16.
+ *
+ * Takes to you a page where a random book can be generated
  */
 @WebServlet(
         name = "goToGetRandomBooks",

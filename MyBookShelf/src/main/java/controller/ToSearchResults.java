@@ -2,7 +2,6 @@ package controller;
 
 import org.apache.log4j.Logger;
 import persistance.BookDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,13 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**
  * Created by Lora on 5/7/16.
+ *
+ * Gets the results from your search to be placed on the page
  */
 @WebServlet(
         name = "goToSearchResults",

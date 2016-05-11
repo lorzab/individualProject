@@ -21,7 +21,8 @@ import java.util.List;
 /**
  * Created by Lora on 5/7/16.
  *
- * This servlet gets the information about the book that was clicked on to see more about it
+ * This servlet gets the information about the book that was clicked on to view and if logged in see if
+ * it is on your wishlist
  *
  */
 @WebServlet(
@@ -105,6 +106,7 @@ public class ToBook extends HttpServlet {
         UserReadingListDaoWithHibernate readingList = new UserReadingListDaoWithHibernate();
         boolean hasReadBook = readingList.hasUserReadBook(userId, id);
 
+        //add all attributes to the session
         session.setAttribute("book", title);
         session.setAttribute("author", author);
         session.setAttribute("isbn", isbn);

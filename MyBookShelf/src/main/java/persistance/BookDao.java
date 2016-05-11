@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Created by Lora on 4/24/16.
+ *
  */
 public interface BookDao {
 

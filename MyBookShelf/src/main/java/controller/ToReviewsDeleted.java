@@ -1,11 +1,8 @@
 package controller;
 
-import entity.Book;
 import entity.ReviewList;
 import org.apache.log4j.Logger;
-import persistance.BookDaoWithHibernate;
 import persistance.ReviewListDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +16,8 @@ import java.util.List;
 
 /**
  * Created by Lora on 5/10/16.
+ *
+ * Takes the review ids from the deleteReviews page and removes them from the database
  */
 @WebServlet(
         name = "goToReviewsDeleted",
@@ -41,7 +40,7 @@ public class ToReviewsDeleted extends HttpServlet {
 
                 ReviewList review = new ReviewList();
 
-        //go throug the reviews
+        //go through the reviews
         for(ReviewList aReview : reviewsToReview) {
             int reviewId = (Integer) aReview.getReview_id();
             String reviewIdString = Integer.toString(reviewId);

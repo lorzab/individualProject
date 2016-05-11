@@ -2,13 +2,10 @@ package controller;
 
 import org.apache.log4j.Logger;
 import persistance.UserDaoWithHibernate;
-import wsdl.GetQuoteResponse;
 import wsdl.QuoteofTheDay;
 import wsdl.QuoteofTheDaySoap;
 import wsdl.Quotes;
-
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,9 +15,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-
 /**
  * Created by Lora on 5/7/16.
+ *
+ * Takes you to the main page after log in with all of the options, gets userName from login
  */
 @WebServlet(
         name = "goToMyBookshelf",
@@ -46,7 +44,7 @@ public class ToMyBookshelf extends HttpServlet {
         userId = user.getUserIdFromUserName(userName);
         session.setAttribute("userId", userId);
 
-        //get the quote of the day
+        //get the quote of the day from soap webservice
         QuoteofTheDaySoap service = new QuoteofTheDay().getQuoteofTheDaySoap12();
         Quotes quote = new Quotes();
         quote = service.getQuote();

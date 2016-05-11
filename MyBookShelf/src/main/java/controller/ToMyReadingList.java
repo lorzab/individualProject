@@ -2,7 +2,6 @@ package controller;
 
 import org.apache.log4j.Logger;
 import persistance.UserReadingListDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +14,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Lora on 5/8/16.
+ *
+ * Takes the logged in user to the books that they have added to the list that they want to read in the future
  */
 @WebServlet(
         name = "goToMyReadingList",

@@ -21,6 +21,10 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Get all of the user reading list from the database
+     * @return all of the user reading lsit
+     */
     @Override
     public List<UserReadingList> getAllUserReadingList() {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -47,6 +51,10 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         return allUsersReadingList;
     }
 
+    /**
+     * Update a user reading list
+     * @param userList the user reading list to be updated
+     */
     @Override
     public void updateUserReadingList(UserReadingList userList) {
 
@@ -67,6 +75,10 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         }
     }
 
+    /**
+     * Delete a user readinglist
+     * @param userList the list to be deleted
+     */
     @Override
     public void deleteUserReadingList(UserReadingList userList) {
 
@@ -87,6 +99,11 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         }
     }
 
+    /**
+     * Add a new user reading list
+      * @param userList the list to be added
+     * @return the reading list id
+     */
     @Override
     public int addUserReadingList(UserReadingList userList) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -110,6 +127,9 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
 
     /**
      * Check to see if a specific book is on the user reading list
+     * @param userId the user that has the book on their reading lsit
+     * @param bookId the book being searched for
+     * @return the id of the reading lsit
      */
     public int getReadingIdFromUserAndBook(int userId, int bookId) {
 
@@ -140,6 +160,9 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
 
     /**
      * Get books for user
+     * @param userId the user that is being searched for
+     * @param wantToSeeWishList do they want to see the books that have been read or the books that they want to read
+     * @return the list of books requested
      */
     public ArrayList<ArrayList<String>> getUserReadingList(int userId, int wantToSeeWishList) {
         List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
@@ -193,6 +216,9 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
 
     /**
      * check to see if a person has read a book
+     * @param userId user to see if they have read a book
+     * @param bookId book being checked on
+     * @return if the book has been read or not
      */
     public boolean hasUserReadBook(int userId, int bookId) {
         List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
@@ -211,6 +237,10 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         return hasReadBook;
     }
 
+    /**
+     * Get the current date
+     * @return the current date to be entered to the database
+     */
     public String getCurrentDate() {
         Calendar cal = Calendar.getInstance();
         Date date = cal.getTime();
