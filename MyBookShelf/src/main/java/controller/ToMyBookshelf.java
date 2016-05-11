@@ -1,8 +1,11 @@
 package controller;
 
 import org.apache.log4j.Logger;
-import persistance.BookDaoWithHibernate;
 import persistance.UserDaoWithHibernate;
+import wsdl.GetQuoteResponse;
+import wsdl.QuoteofTheDay;
+import wsdl.QuoteofTheDaySoap;
+import wsdl.Quotes;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -13,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
+
+
 
 /**
  * Created by Lora on 5/7/16.
@@ -43,12 +46,21 @@ public class ToMyBookshelf extends HttpServlet {
         userId = user.getUserIdFromUserName(userName);
         session.setAttribute("userId", userId);
 
+        //get the quote of the day
+        QuoteofTheDaySoap service = new QuoteofTheDay().getQuoteofTheDaySoap12();
+        Quotes quote = new Quotes();
+        quote = service.getQuote();
+
+        String quoteForPage = quote.getQuoteOfTheDay();
+        String quoteAuthor = quote.getAuthor();
+
+        session.setAttribute("quoteOfDay", quoteForPage);
+        session.setAttribute("quoteAuthor", quoteAuthor);
+
         String urlForward = "/jsp/myBookshelf.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);
         dispatcher.forward(request, response);
-        /*ServletContext context = getServletContext();
-        response.sendRedirect(urlRedirect);*/
     }
 }

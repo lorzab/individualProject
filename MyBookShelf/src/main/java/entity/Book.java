@@ -15,6 +15,7 @@ public class Book {
     private String isbn;
     private String title;
     private String author;
+    private int approved;
 
     public Book() {
     }
@@ -64,6 +65,14 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    @Basic
+    @Column(name = "approved", nullable = true, length = 1)
+    public int getApproved() {return approved;}
+
+    public void setApproved(int approved) {this.approved = approved;}
+
+
 
     @Override
     public String toString() {

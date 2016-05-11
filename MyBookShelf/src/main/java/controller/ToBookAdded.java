@@ -64,7 +64,7 @@ public class ToBookAdded extends HttpServlet {
         readingList.setUser_id(userId);
         readingList.setBook_id(bookId);
         readingList.setWish_list(0);
-        readingList.setDate_added("2016-01-02");
+        readingList.setDate_added(thisUserReadingList.getCurrentDate());
         int readingId = thisUserReadingList.addUserReadingList(readingList);
 
         //add to reviewList

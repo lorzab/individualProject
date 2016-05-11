@@ -56,13 +56,13 @@ public class ToAddBookToWishList extends HttpServlet {
             readingList.setUser_id(userId);
             readingList.setBook_id(bookId);
             readingList.setWish_list(wantToRead);
-            readingList.setDate_added("2016-01-02");
+            readingList.setDate_added(allReadingList.getCurrentDate());
 
             allReadingList.addUserReadingList(readingList);
 
         } //if readingId != 0 update userReadingList
         else {
-            readingList = new UserReadingList(readingId, userId, bookId, wantToRead, "2016-05-10");
+            readingList = new UserReadingList(readingId, userId, bookId, wantToRead, allReadingList.getCurrentDate());
             allReadingList.updateUserReadingList(readingList);
         }
 

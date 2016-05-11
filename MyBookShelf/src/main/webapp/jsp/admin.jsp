@@ -13,8 +13,8 @@
 <body>
 This is the admin page where fancy admin-only stuff happens.
 <ul>
-  <li><a href="display.jsp">Take me to the Display Page</a></li>
-  <li><a href="../index.jsp">Take me Home</a></li>
+  <h3><a href="../index.jsp">Take me to the Search Page</a></h3>
+  <h3><a href="/goto-approve-books">Approve Books</a></h3>
 </ul>
 </body>
 </html>

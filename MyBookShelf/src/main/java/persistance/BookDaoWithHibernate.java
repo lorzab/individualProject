@@ -1,13 +1,11 @@
 package persistance;
 
 import entity.Book;
-import entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -262,5 +260,64 @@ public class BookDaoWithHibernate implements BookDao{
             }
         }
         return author;
+    }
+
+    /**
+     * Get nonapproved books for approval
+     */
+    public ArrayList<ArrayList> getNonApprovedBooks() {
+        List<Book> allBooks = new ArrayList<Book>();
+        allBooks = getAllBooks();
+        ArrayList bookInfo = new ArrayList();
+        ArrayList<ArrayList> nonApprovedBooks = new ArrayList<ArrayList>();
+
+        for(Book book : allBooks) {
+            if(book.getApproved() == 0) {
+                int bookId = book.getId();
+                String title = book.getTitle();
+                String author = book.getAuthor();
+                String isbn = book.getIsbn();
+
+                log.info("in nonapproved books, id: " + bookId);
+
+                bookInfo.add(bookId);
+                bookInfo.add(title);
+                bookInfo.add(author);
+                bookInfo.add(isbn);
+
+                nonApprovedBooks.add(bookInfo);
+            }
+        }
+        return nonApprovedBooks;
+    }
+
+    /**
+     * Get a random book
+     */
+    public ArrayList getRandomBook() {
+        List<Book> allBooks = new ArrayList<Book>();
+        allBooks = getAllBooks();
+        int bookCount = allBooks.size();
+        log.info("book count " +  bookCount);
+        Book book = new Book();
+
+        //get random number
+        int randomNumber = (int) ( Math.random() * (bookCount - 1 ));
+
+        //log.info(url);
+        log.info("random number: " + randomNumber);
+
+        book = allBooks.get(randomNumber);
+        int bookId = book.getId();
+        String title = book.getTitle();
+
+        log.info("bookId: " + bookId);
+        log.info("title: " + title);
+
+        ArrayList randomBook = new ArrayList();
+        randomBook.add(bookId);
+        randomBook.add(title);
+
+        return randomBook;
     }
 }

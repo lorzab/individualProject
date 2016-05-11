@@ -21,10 +21,10 @@ public class ReviewDaoWithHibernateTest {
         //create book for test
         ReviewList getAllReviews = new ReviewList();
         getAllReviews.setReview_id(0);
-        getAllReviews.setBook_id(4);
+        getAllReviews.setBook_id(84);
         getAllReviews.setNotes("This is the best book ever");
         getAllReviews.setRating(1);
-        getAllReviews.setReading_id(1);
+        getAllReviews.setReading_id(31);
         getAllReviews.setUser_id(3);
         insertReviewId = dao.addReview(getAllReviews);
     }
@@ -42,7 +42,7 @@ public class ReviewDaoWithHibernateTest {
     public void testUpdateReview() throws Exception {
 
         ReviewListDaoWithHibernate dao = new ReviewListDaoWithHibernate();
-        ReviewList review = new ReviewList(2, 3, 3, 3, "This book Sucks", 0.0);
+        ReviewList review = new ReviewList(2, 30, 3, 82, "This book Sucks", 0.0);
 
         dao.updateReview(review);
         assertEquals("This is the wrong review", "This book Sucks", review.getNotes());
@@ -74,10 +74,10 @@ public class ReviewDaoWithHibernateTest {
 
         //create review to add
         ReviewList review = new ReviewList();
-        review.setReading_id(1);
+        review.setReading_id(29);
         review.setUser_id(3);
         review.setRating(0);
-        review.setBook_id(8);
+        review.setBook_id(81);
         review.setNotes("Awesome Sauce");
 
         insertReviewId = dao.addReview(review);

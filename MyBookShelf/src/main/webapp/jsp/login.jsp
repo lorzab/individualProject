@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Log In</title>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 

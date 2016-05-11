@@ -8,7 +8,10 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -208,4 +211,13 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         return hasReadBook;
     }
 
+    public String getCurrentDate() {
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String date1 = format1.format(date);
+        log.info(date1);
+
+        return date1;
+    }
 }
