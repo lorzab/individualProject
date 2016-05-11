@@ -242,15 +242,15 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
      * Get reviews to look over
      * @return
      */
-    public ArrayList<ArrayList> getReviewsToModerate() {
+    public ArrayList<ArrayList<String>> getReviewsToModerate() {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
         allReviews = getAllReviews();
 
         ArrayList reviewInfo = new ArrayList();
-        ArrayList<ArrayList> reviewsToReview = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> reviewsToReview = new ArrayList<ArrayList<String>>();
 
         for (ReviewList review : allReviews) {
-            reviewInfo.add(review.getReview_id());
+            reviewInfo.add(Integer.toString(review.getReview_id()));
             reviewInfo.add(review.getNotes());
 
             log.info("review id: " + review.getReview_id());

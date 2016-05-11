@@ -31,7 +31,7 @@ public class TpApproveBooks extends HttpServlet {
         HttpSession session = request.getSession();
 
         //get books that have not been approved yet
-        ArrayList<ArrayList> nonApprovedBooks = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> nonApprovedBooks = new ArrayList<ArrayList<String>>();
         BookDaoWithHibernate books = new BookDaoWithHibernate();
         nonApprovedBooks = books.getNonApprovedBooks();
 

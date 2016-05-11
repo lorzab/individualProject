@@ -33,7 +33,7 @@ public class ToBooksApproved extends HttpServlet {
         HttpSession session = request.getSession();
 
         BookDaoWithHibernate allBooks = new BookDaoWithHibernate();
-        ArrayList<ArrayList> nonApprovedBooks = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> nonApprovedBooks = new ArrayList<ArrayList<String>>();
         nonApprovedBooks = allBooks.getNonApprovedBooks();
         List<Book> bookSet = new ArrayList<Book>();
         bookSet = allBooks.getAllBooks();

@@ -9,11 +9,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title></title>
+  <c:import url="head-tag.jsp" />
 </head>
 <body>
 
-Your reading list has been updated
+<c:import url="header.jsp" />
+
+<c:import url="image.jsp" />
+
+<br />
+
+<h1>Your reading list has been updated</h1>
 
 <c:if test="${onWishList == 'yes'}">
   to add ${book} to your list. <br />

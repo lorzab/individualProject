@@ -23,7 +23,9 @@
             <url-pattern>/jsp/booksApproved.jsp</url-pattern>
             <url-pattern>/goto-approve-books</url-pattern>
             <url-pattern>/goto-approvedbooks</url-pattern>
-            <url-pattern></url-pattern>
+            <url-pattern>/jsp/deleteReviews.jsp</url-pattern>
+            <url-pattern>/goto-delete-reviews</url-pattern>
+            <url-pattern>/goto-reviews-deleted</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
@@ -58,8 +60,6 @@
             <url-pattern>/goto-random-book</url-pattern>
             <url-pattern>/goto-recommended-books</url-pattern>
             <url-pattern>/goto-approve-books</url-pattern>
-            <url-pattern></url-pattern>
-            <url-pattern></url-pattern>
             <url-pattern></url-pattern>
             <url-pattern></url-pattern>
             <url-pattern></url-pattern>

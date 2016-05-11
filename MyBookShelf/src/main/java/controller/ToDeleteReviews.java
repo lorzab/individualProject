@@ -30,7 +30,7 @@ public class ToDeleteReviews extends HttpServlet {
         //get the session object
         HttpSession session = request.getSession();
 
-        ArrayList<ArrayList> reviewsToReview = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> reviewsToReview = new ArrayList<ArrayList<String>>();
         ReviewListDaoWithHibernate allReviews = new ReviewListDaoWithHibernate();
         reviewsToReview = allReviews.getReviewsToModerate();
 

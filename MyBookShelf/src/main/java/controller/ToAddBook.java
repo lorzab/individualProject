@@ -1,8 +1,6 @@
 package controller;
 
 import org.apache.log4j.Logger;
-import persistance.UserReadingListDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by Lora on 5/8/16.
+ *
+ * This servlet takes you to the addBook page
  */
 @WebServlet(
         name = "goToAddBook",

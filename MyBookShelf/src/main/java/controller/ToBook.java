@@ -20,6 +20,9 @@ import java.util.List;
 
 /**
  * Created by Lora on 5/7/16.
+ *
+ * This servlet gets the information about the book that was clicked on to see more about it
+ *
  */
 @WebServlet(
         name = "goToBook",

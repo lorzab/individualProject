@@ -1,10 +1,8 @@
 package controller;
 
-import entity.User;
 import entity.UserReadingList;
 import org.apache.log4j.Logger;
 import persistance.UserReadingListDaoWithHibernate;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +14,9 @@ import java.io.IOException;
 
 /**
  * Created by Lora on 5/8/16.
+ *
+ * This servlet takes a book that you want to add to your wishlist and puts it on the wishlist takes you to
+ * a confirmation screen that it was added
  */
 @WebServlet(
         name = "goToAddBookWishList",
@@ -35,15 +36,17 @@ public class ToAddBookToWishList extends HttpServlet {
 
         //get the readinglist change
         String wishlist = request.getParameter("wishList");
+        session.setAttribute("onWishList", wishlist);
         log.info(wishlist);
 
         int wantToRead = 0;
         if (wishlist.equals("yes")) {
             wantToRead = 1;
         }
-        session.setAttribute("onWishList", wishlist);
+
         log.info("want to read: " + wantToRead);
 
+        //get the book information to change the book to on the wishlist in the database
         int readingId = (Integer) session.getAttribute("readingId");
         int userId = (Integer) session.getAttribute("userId");
         int bookId = (Integer) session.getAttribute("bookId");

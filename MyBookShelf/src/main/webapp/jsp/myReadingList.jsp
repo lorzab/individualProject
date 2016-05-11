@@ -9,10 +9,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title></title>
+  <c:import url="head-tag.jsp" />
 </head>
 <body>
 
+<c:import url="header.jsp" />
+
+<c:import url="image.jsp" />
+
+<br />
 <h1>${userName}'s Books To Read</h1>
 
 <c:if test="${myBooks.isEmpty()}">

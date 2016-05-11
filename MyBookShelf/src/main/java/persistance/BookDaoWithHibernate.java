@@ -212,19 +212,19 @@ public class BookDaoWithHibernate implements BookDao{
     /**
      * Get nonapproved books for approval
      */
-    public ArrayList<ArrayList> getNonApprovedBooks() {
+    public ArrayList<ArrayList<String>> getNonApprovedBooks() {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
         ArrayList bookInfo = new ArrayList();
-        ArrayList<ArrayList> nonApprovedBooks = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> nonApprovedBooks = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {
             if(book.getApproved() == 0) {
 
                 log.info("in nonapproved books, id: " + book.getId());
 
-                bookInfo.add(book.getId());
+                bookInfo.add(Integer.toString(book.getId()));
                 bookInfo.add(book.getTitle());
                 bookInfo.add(book.getAuthor());
                 bookInfo.add(book.getIsbn());
