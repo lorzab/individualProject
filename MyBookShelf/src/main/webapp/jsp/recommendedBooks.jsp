@@ -32,10 +32,10 @@
   <tbody>
   <c:forEach items="${recommendedBooks}" var="books">
       <tr>
-        <td><a href="/goto-book?bookID=${books[0]}">${books[1]}</a></td>
-        <td>${books[2]}</td>
-        <td>${books[3]}</td>
-        <td>${books[4]}</td>
+        <td><a href="/warArchive/goto-book?bookID=${books.get(0)}">${books.get(1)}</a></td>
+        <td>${books.get(2)}</td>
+        <td>${books.get(3)}</td>
+        <td>${books.get(4)}</td>
       </tr>
   </c:forEach>
   </tbody>

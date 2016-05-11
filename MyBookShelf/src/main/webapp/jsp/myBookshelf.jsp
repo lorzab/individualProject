@@ -24,12 +24,12 @@
 <h2>${quoteOfDay}</h2>
 <h4>-${quoteAuthor}</h4>
 
-<h3><a href="/goto-my-books">My Books</a></h3>
-<h3><a href="/goto-my-reading-list">Reading List</a></h3>
-<h3><a href="/goto-get-recommended-books">Get Recommended Books</a></h3>
-<h3><a href="../index.jsp">Search Shelves</a></h3>
-<h3><a href="/goto-my-add-book">Add Book</a></h3>
-<h3><a href="/goto-get-random-book">Get Random Book Suggestion</a></h3>
+<h3><a href="/warArchive/goto-my-books">My Books</a></h3>
+<h3><a href="/warArchive/goto-my-reading-list">Reading List</a></h3>
+<h3><a href="/warArchive/goto-get-recommended-books">Get Recommended Books</a></h3>
+<h3><a href="/warArchive/warArchive/index.jsp">Search Shelves</a></h3>
+<h3><a href="/warArchive/goto-my-add-book">Add Book</a></h3>
+<h3><a href="/warArchive/goto-get-random-book">Get Random Book Suggestion</a></h3>
 
 
 </body>

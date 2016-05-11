@@ -35,12 +35,11 @@
 
   <c:forEach items="${myBooks}" var="books">
       <tr>
-        <td><a href="/goto-book?bookID=${books[0]}">${books[1]}</a></td>
+        <td><a href="/warArchive/goto-book?bookID=${books[0]}">${books[1]}</a></td>
         <td>${books[2]}</td>
         <td>${books[3]}</td>
         <td>${books[4]}</td>
         <td>${books[5]}</td>
-        <td>${books[0]}</td>
       </tr>
   </c:forEach>
   </tbody>

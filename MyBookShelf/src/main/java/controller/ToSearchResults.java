@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToSearchResults",
-        urlPatterns = { "/goto-search-results" }
+        urlPatterns = { "/warArchive/goto-search-results" }
 )
 public class ToSearchResults extends HttpServlet {
 
@@ -37,7 +37,7 @@ public class ToSearchResults extends HttpServlet {
 
         //create element to hold search results
         ArrayList<ArrayList> authorSearchResults = new ArrayList<ArrayList>();
-        ArrayList<ArrayList> allTitles = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> allTitles = new ArrayList<ArrayList<String>>();
         BookDaoWithHibernate books = new BookDaoWithHibernate();
 
         if(searchType.equals("author")) {
@@ -58,7 +58,7 @@ public class ToSearchResults extends HttpServlet {
             session.setAttribute("searchResults", allTitles);
         }
 
-        String urlForward = "/jsp/searchResults.jsp";
+        String urlForward = "/warArchive/jsp/searchResults.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

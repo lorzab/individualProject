@@ -20,7 +20,7 @@
 <br />
 
 <h1>Delete Review</h1>
-<form action="/goto-reviews-deleted" method="GET">
+<form action="/warArchive/goto-reviews-deleted" method="GET">
 <table>
   <tr>
     <th>Review ID</th>

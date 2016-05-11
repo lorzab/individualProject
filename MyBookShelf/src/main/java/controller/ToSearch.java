@@ -16,14 +16,14 @@ import java.io.IOException;
  */
 @WebServlet(
         name = "goToSearch",
-        urlPatterns = { "/goto-search" }
+        urlPatterns = { "/warArchive/goto-search" }
 )
 public class ToSearch extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String urlForward = "/jsp/search.jsp";
+        String urlForward = "/warArchive/jsp/search.jsp";
 
         //get they type of search wanted
         String searchType = request.getParameter("searchType");

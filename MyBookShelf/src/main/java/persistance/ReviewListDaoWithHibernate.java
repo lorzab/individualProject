@@ -236,12 +236,12 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
      * @param userId the user that needs recommendations
      * @return the list of books over the percentage that the user has not read
      */
-    public ArrayList<ArrayList> getRecommendedBooksUserHasNotRead(int userId) {
+    public ArrayList<ArrayList<String>> getRecommendedBooksUserHasNotRead(int userId) {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
         allReviews = getAllReviews();
         BookDaoWithHibernate book = new BookDaoWithHibernate();
-        ArrayList bookInfo = new ArrayList();
-        ArrayList<ArrayList> allRecommendatedBooks = new ArrayList<ArrayList>();
+        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<ArrayList<String>> allRecommendatedBooks = new ArrayList<ArrayList<String>>();
         double recommendationPercentage = .5;
 
 
@@ -253,15 +253,17 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
                 if(recommendatingRating > recommendationPercentage) {
                     //return array of title, author, note, recommendationPercentage,
                     int bookId = review.getBook_id();
+                    String bookIdString = Integer.toString(bookId);
                     String title = book.getTitleFromId(bookId);
                     String author = book.getAuthorFromId(bookId);
                     String note = review.getNotes();
+                    String recommendedString = Double.toString(recommendatingRating);
 
-                    bookInfo.add(bookId);
+                    bookInfo.add(bookIdString);
                     bookInfo.add(title);
                     bookInfo.add(author);
                     bookInfo.add(note);
-                    bookInfo.add(recommendatingRating);
+                    bookInfo.add(recommendedString);
 
                     allRecommendatedBooks.add(bookInfo);
                 }
@@ -278,7 +280,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
         allReviews = getAllReviews();
 
-        ArrayList reviewInfo = new ArrayList();
+        ArrayList<String> reviewInfo = new ArrayList<String>();
         ArrayList<ArrayList<String>> reviewsToReview = new ArrayList<ArrayList<String>>();
 
         for (ReviewList review : allReviews) {

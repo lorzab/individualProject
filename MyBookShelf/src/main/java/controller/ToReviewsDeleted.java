@@ -21,7 +21,7 @@ import java.util.List;
  */
 @WebServlet(
         name = "goToReviewsDeleted",
-        urlPatterns = { "/goto-reviews-deleted" }
+        urlPatterns = { "/warArchive/goto-reviews-deleted" }
 )
 public class ToReviewsDeleted extends HttpServlet {
 
@@ -65,7 +65,7 @@ public class ToReviewsDeleted extends HttpServlet {
             }
         }
 
-        String urlForward = "/goto-delete-reviews";
+        String urlForward = "/warArchive/goto-delete-reviews";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

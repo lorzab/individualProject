@@ -20,7 +20,7 @@
 <br />
 <h1>Get Recommended Books</h1>
 
-<form action="/goto-recommended-books" method="GET">
+<form action="/warArchive/goto-recommended-books" method="GET">
 
   <input type="submit" name="submit" value="Get Books" />
 

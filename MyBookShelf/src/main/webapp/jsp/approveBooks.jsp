@@ -20,7 +20,7 @@
 <br />
 <h1>Approve Books</h1>
 
-<form action="/goto-approvedbooks" method="GET">
+<form action="/warArchive/goto-approvedbooks" method="GET">
 <table>
   <tr>
     <th>BookID</th>

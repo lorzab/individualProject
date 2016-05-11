@@ -152,12 +152,12 @@ public class BookDaoWithHibernate implements BookDao{
      * @param title title to be searched for
      * @return return all books that have this title
      */
-    public ArrayList<ArrayList> searchTitle(String title) {
+    public ArrayList<ArrayList<String>> searchTitle(String title) {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
-        ArrayList bookInfo = new ArrayList();
-        ArrayList<ArrayList> books = new ArrayList<ArrayList>();
+        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<ArrayList<String>> books = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {
 
@@ -166,7 +166,7 @@ public class BookDaoWithHibernate implements BookDao{
             if(book.getTitle().equals(title)){
 
                 log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
-                bookInfo.add(book.getId());
+                bookInfo.add(Integer.toString(book.getId()));
                 bookInfo.add(title);
                 bookInfo.add(book.getAuthor());
 
@@ -183,19 +183,19 @@ public class BookDaoWithHibernate implements BookDao{
      *
      * @return an ArrayList of all of the attributes of the book
      */
-    public ArrayList<ArrayList> searchAllBookTitles() {
+    public ArrayList<ArrayList<String>> searchAllBookTitles() {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
         log.info("Number of books" +allBooks.size());
 
-        ArrayList bookInfo = new ArrayList();
-        ArrayList<ArrayList> books = new ArrayList<ArrayList>();
+        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<ArrayList<String>> books = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {
             log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
 
-            bookInfo.add(book.getId());
+            bookInfo.add(Integer.toString(book.getId()));
             bookInfo.add(book.getTitle());
             bookInfo.add(book.getAuthor());
 
@@ -251,7 +251,7 @@ public class BookDaoWithHibernate implements BookDao{
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
-        ArrayList bookInfo = new ArrayList();
+        ArrayList<String> bookInfo = new ArrayList<String>();
         ArrayList<ArrayList<String>> nonApprovedBooks = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {

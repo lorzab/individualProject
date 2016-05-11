@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToRecommendedBooks",
-        urlPatterns = { "/goto-recommended-books" }
+        urlPatterns = { "/warArchive/goto-recommended-books" }
 )
 public class ToRecommendedBooks extends HttpServlet {
 
@@ -34,11 +34,11 @@ public class ToRecommendedBooks extends HttpServlet {
         int userId = (Integer) session.getAttribute("userId");
 
         ReviewListDaoWithHibernate reviewList = new ReviewListDaoWithHibernate();
-        ArrayList<ArrayList> recommendedBooks = new ArrayList<ArrayList>();
+        ArrayList<ArrayList<String>> recommendedBooks = new ArrayList<ArrayList<String>>();
         recommendedBooks = reviewList.getRecommendedBooksUserHasNotRead(userId);
         session.setAttribute("recommendedBooks", recommendedBooks);
 
-        String urlForward = "/jsp/recommendedBooks.jsp";
+        String urlForward = "/warArchive/jsp/recommendedBooks.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);
