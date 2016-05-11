@@ -53,3 +53,14 @@ to get maven build cd to where the POM file is, use mvn instal then take war fil
 ##Week 10
 * Got maven working
 * Got uploading to openshift working
+
+
+##Week11
+Work with getting daos integrated with the database and creating test classes for crud operations
+
+##Week12
+Think about jsps
+
+##Week 13
+Work on mysql and getting foreign keys to work
+

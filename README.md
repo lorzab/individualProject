@@ -13,15 +13,17 @@ I enjoy reading and do many of my family however I tend to lend my books or sell
 	- Store users and roles
 	- Store book information
 * Web Services or APIs
-	- look for a web service that will work with isbn numbers (pull up cover art, link  to amazon)?
+	- Used a soap webservice that gives you a new quote every time you access it
+	- [Quote of the Day](http://www.swanandmokashi.com/HomePage/WebServices/QuoteOfTheDay.asmx?op=GetQuote)
 * Bookstrap
-	- Make the interface look plesant
+	- Make the interface look pleasant
 * Logging
 	- configure logging for production to help with errors and debugging
 * Site and database hosted on OpenShift
-* Jenkins for Continuous Intergration
 * Unit Testing
+	- Junit tests
 * Independent Research Topic
+	-Maven for building
 
 
 ###Design
