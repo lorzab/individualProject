@@ -22,16 +22,18 @@
     <th>Author</th>
     <th>Approve</th>
   </tr>
-  <c:forEach items="${nonApproved}" var="book">
-    <tr>
-      <td>${book[0]}</td>
-      <td>${book[1]}</td>
-      <td>${book[2]}</td>
-      <td><input type="checkbox" value="${book[0]}" name="${book[0]}" /></td>
-      <td><input type="submit" name="submit" value="submit" /></td>
-    </tr>
 
+  <c:forEach items="${nonApproved}" var="book">
+  <tr>
+    <td>${book}</td>
+      <td>${book.get(0)}</td>
+      <td>${book.get(1)}</td>
+      <td>${book.get(2)}</td>
+      <td><input type="checkbox" value="${book.get(0)}" name="${book.get(0)}" /></td>
+      <td><input type="submit" name="submit" value="submit" /></td>
+  </tr>
   </c:forEach>
+
 </table>
 </form>
 </body>

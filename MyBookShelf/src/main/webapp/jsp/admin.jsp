@@ -15,6 +15,7 @@ This is the admin page where fancy admin-only stuff happens.
 <ul>
   <h3><a href="../index.jsp">Take me to the Search Page</a></h3>
   <h3><a href="/goto-approve-books">Approve Books</a></h3>
+  <h3><a href="/goto-delete-reviews">Delete Reviews</a></h3>
 </ul>
 </body>
 </html>

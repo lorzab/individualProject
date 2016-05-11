@@ -187,7 +187,7 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
                 }
             }
         }
-        log.info(userReadingList.size());
+        log.info("user reading list size" + userReadingList.size());
         return userReadingList;
     }
 
@@ -220,4 +220,6 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
 
         return date1;
     }
+
+
 }

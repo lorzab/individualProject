@@ -18,7 +18,12 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>webapp</web-resource-name>
-            <url-pattern>/admin.jsp</url-pattern>
+            <url-pattern>/jsp/admin.jsp</url-pattern>
+            <url-pattern>/jsp/approveBooks.jsp</url-pattern>
+            <url-pattern>/jsp/booksApproved.jsp</url-pattern>
+            <url-pattern>/goto-approve-books</url-pattern>
+            <url-pattern>/goto-approvedbooks</url-pattern>
+            <url-pattern></url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
@@ -30,9 +35,35 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>webapp</web-resource-name>
-            <url-pattern>/myBookshelf.jsp</url-pattern>
+            <url-pattern>/jsp/myBookshelf.jsp</url-pattern>
             <url-pattern>/addBook.jsp</url-pattern>
             <url-pattern>/goto-my-bookshelf</url-pattern>
+            <url-pattern>/jsp/addBook.jsp</url-pattern>
+            <url-pattern>/jsp/bookAdded.jsp</url-pattern>
+            <url-pattern>/jsp/bookAddedToWishList.jsp</url-pattern>
+            <url-pattern>/jsp/getRandomBook.jsp</url-pattern>
+            <url-pattern>/jsp/getRecommendedBooks.jsp</url-pattern>
+            <url-pattern>/jsp/myBooks.jsp</url-pattern>
+            <url-pattern>/jsp/myReadingList.jsp</url-pattern>
+            <url-pattern>/jsp/randomBook.jsp</url-pattern>
+            <url-pattern>/jsp/recommendedBooks.jsp</url-pattern>
+            <url-pattern>/goto-my-add-book"</url-pattern>
+            <url-pattern>/goto-book-changed-wishlist</url-pattern>
+            <url-pattern>/goto-my-book-added"</url-pattern>
+            <url-pattern>/goto-approvedbooks</url-pattern>
+            <url-pattern>/goto-get-random-book</url-pattern>
+            <url-pattern>/goto-get-recommended-books</url-pattern>
+            <url-pattern>/goto-my-books</url-pattern>
+            <url-pattern>/goto-my-reading-list</url-pattern>
+            <url-pattern>/goto-random-book</url-pattern>
+            <url-pattern>/goto-recommended-books</url-pattern>
+            <url-pattern>/goto-approve-books</url-pattern>
+            <url-pattern></url-pattern>
+            <url-pattern></url-pattern>
+            <url-pattern></url-pattern>
+            <url-pattern></url-pattern>
+            <url-pattern></url-pattern>
+            <url-pattern></url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>regUser</role-name>

@@ -30,11 +30,9 @@
         </thead>
         <tbody>
           <c:forEach var="result" items="${searchResults}">
-            <c:forEach items="${result}" var="book">
-              <tr>
-                <td><a href="/goto-book?bookID=${book.key}">${book.value}"</a></td>
-              </tr>
-            </c:forEach>
+            <tr>
+              <td><a href="/goto-book?bookID=${result.get(0)}">${result.get(1)}</a></td>
+            </tr>
           </c:forEach>
         </tbody>
       </table>
@@ -57,15 +55,11 @@
         </thead>
         <tbody>
         <c:forEach items="${searchResults}" var="maps">
-          <c:forEach items="${maps}" var="mapItem">
             <tr>
-              <td><a href="/goto-book?bookID=${mapItem.key}">
-                <c:forEach items="${mapItem.value}" var="book">
-                  ${book.key}</a></td>
-              <td>${book.value}</td>
-              </c:forEach>
+              <td><a href="/goto-book?bookID=${maps.get(0)}">
+                  ${maps.get(1)}</a></td>
+              <td>${maps.get(2)}</td>
             </tr>
-          </c:forEach>
         </c:forEach>
         </tbody>
       </table>

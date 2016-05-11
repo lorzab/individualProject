@@ -1,13 +1,11 @@
 package persistance;
 
-import entity.Book;
 import entity.ReviewList;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -184,6 +182,26 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
     }
 
     /**
+     * Get reviewId from userId, bookId, readingId
+     */
+    public int getReviewIdFromForeignKeys(int bookId, int userId, int readingId) {
+        List<ReviewList> allReviews = new ArrayList<ReviewList>();
+        allReviews = getAllReviews();
+        int reviewId = 0;
+
+        for(ReviewList review : allReviews) {
+            if(review.getBook_id() == bookId) {
+                if(review.getUser_id() == userId) {
+                    if(review.getReading_id() == readingId) {
+                        reviewId = review.getReview_id();
+                    }
+                }
+            }
+        }
+        return reviewId;
+    }
+
+    /**
      * Get the list of books what have a recommended % better than 50%
      */
     public ArrayList<ArrayList> getRecommendedBooksUserHasNotRead(int userId) {
@@ -218,5 +236,27 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
             }
         }
         return allRecommendatedBooks;
+    }
+
+    /**
+     * Get reviews to look over
+     * @return
+     */
+    public ArrayList<ArrayList> getReviewsToModerate() {
+        List<ReviewList> allReviews = new ArrayList<ReviewList>();
+        allReviews = getAllReviews();
+
+        ArrayList reviewInfo = new ArrayList();
+        ArrayList<ArrayList> reviewsToReview = new ArrayList<ArrayList>();
+
+        for (ReviewList review : allReviews) {
+            reviewInfo.add(review.getReview_id());
+            reviewInfo.add(review.getNotes());
+
+            log.info("review id: " + review.getReview_id());
+
+            reviewsToReview.add(reviewInfo);
+        }
+        return reviewsToReview;
     }
 }

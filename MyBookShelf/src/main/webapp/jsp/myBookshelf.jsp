@@ -15,7 +15,7 @@
 <h1>${userName}'s Bookshelf</h1>
 
 <h2>${quoteOfDay}</h2>
-<h4>${quoteAuthor}</h4>
+<h4>-${quoteAuthor}</h4>
 
 <h3><a href="/goto-my-books">My Books</a></h3>
 <h3><a href="/goto-my-reading-list">Reading List</a></h3>

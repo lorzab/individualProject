@@ -105,91 +105,44 @@ public class BookDaoWithHibernate implements BookDao{
      * @param author
      * @return
      */
-    public ArrayList<Map<Integer, String>> getBooksByAuthor(String author) {
+    public ArrayList<ArrayList> getBooksByAuthor(String author) {
         List<Book> allBooks = new ArrayList<Book>();
-        ArrayList<Map<Integer, String>> booksByAuthor = new ArrayList<Map<Integer, String>>();
-        Map<Integer, String> idAuthor = new HashMap<Integer, String>();
+        ArrayList<ArrayList> booksByAuthor = new ArrayList<ArrayList>();
+        ArrayList authorInfo = new ArrayList();
         //get all books
         allBooks = getAllBooks();
 
         for(Book book : allBooks) {
             if(book.getAuthor().equals(author)){
-                idAuthor.put(book.getId(), book.getTitle());
-                booksByAuthor.add(idAuthor);
+
+                authorInfo.add(book.getId());
+                authorInfo.add(book.getTitle());
+
+                booksByAuthor.add(authorInfo);
             }
         }
 
         return booksByAuthor;
     }
 
-    /**
-     * Search for one title
-     */
-    public ArrayList<Map<Integer ,Map<String, String>>> searchTitle(String title) {
+
+    public ArrayList<ArrayList> searchTitle(String title) {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
-        Map<Integer, Map<String, String>> bookId = new HashMap<Integer, Map<String, String>>();
-        ArrayList<Map<Integer, Map<String, String>>> bookInfo = new ArrayList<Map<Integer, Map<String, String>>>();
-
-        for(Book book : allBooks) {
-            if(book.getTitle().equals(title)){
-                Map<String, String> titleAuthor = new HashMap<String, String>();
-                titleAuthor.put(title, book.getAuthor());
-                //log.info(book.getId() + " " + title + " " + book.getAuthor());
-                bookId.put(book.getId(), titleAuthor);
-                bookInfo.add(bookId);
-            }
-        }
-
-        return  bookInfo;
-    }
-
-    /**
-     * Search all books on the shelves
-     */
-    public ArrayList<Map<Integer ,Map<String, String>>> searchAllBookTitles() {
-        List<Book> allBooks = new ArrayList<Book>();
-        allBooks = getAllBooks();
-
-        log.info("Number of books" +allBooks.size());
-
-        Map<Integer,Map<String, String>> bookId = new HashMap<Integer, Map<String, String>>();
-        ArrayList<Map<Integer, Map<String, String>>> bookInfo = new ArrayList<Map<Integer, Map<String, String>>>();
-
-        for(Book book : allBooks) {
-            Map<String, String> titleAuthor = new HashMap<String, String>();
-            titleAuthor.put(book.getTitle(), book.getAuthor());
-            //log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
-            bookId.put(book.getId(), titleAuthor);
-            bookInfo.add(bookId);
-        }
-
-        return bookInfo;
-    }
-
-    /*public ArrayList<ArrayList<Map>> searchTitle(String title) {
-        List<Book> allBooks = new ArrayList<Book>();
-        allBooks = getAllBooks();
-
-        Map<String, Integer> bookId = new HashMap<String, Integer>();
-        Map<String, String> titleMap = new HashMap<String, String>();
-        Map<String, String> author = new HashMap<String, String>();
-        ArrayList<Map> bookInfo = new ArrayList<Map>();
-        ArrayList<ArrayList<Map>> books = new ArrayList<ArrayList<Map>>();
+        ArrayList bookInfo = new ArrayList();
+        ArrayList<ArrayList> books = new ArrayList<ArrayList>();
 
         for(Book book : allBooks) {
 
             log.info("book dao");
 
             if(book.getTitle().equals(title)){
-                bookId.put("bookId", book.getId());
-                titleMap.put("title", title);
-                author.put("author", book.getAuthor());
+
                 log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
-                bookInfo.add(bookId);
-                bookInfo.add(titleMap);
-                bookInfo.add(author);
+                bookInfo.add(book.getId());
+                bookInfo.add(title);
+                bookInfo.add(book.getAuthor());
 
                 books.add(bookInfo);
             }
@@ -200,33 +153,27 @@ public class BookDaoWithHibernate implements BookDao{
 
 
 
-    public ArrayList<ArrayList<Map>> searchAllBookTitles() {
+    public ArrayList<ArrayList> searchAllBookTitles() {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
         log.info("Number of books" +allBooks.size());
 
-        Map<String, Integer> bookId = new HashMap<String, Integer>();
-        Map<String, String> title = new HashMap<String, String>();
-        Map<String, String> author = new HashMap<String, String>();
-        ArrayList<Map> bookInfo = new ArrayList<Map>();
-        ArrayList<ArrayList<Map>> books = new ArrayList<ArrayList<Map>>();
+        ArrayList bookInfo = new ArrayList();
+        ArrayList<ArrayList> books = new ArrayList<ArrayList>();
 
         for(Book book : allBooks) {
-            bookId.put("bookId", book.getId());
-            title.put("title", book.getTitle());
-            author.put("author", book.getAuthor());
             //log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
 
-            bookInfo.add(bookId);
-            bookInfo.add(title);
-            bookInfo.add(author);
+            bookInfo.add(book.getId());
+            bookInfo.add(book.getTitle());
+            bookInfo.add(book.getAuthor());
 
             books.add(bookInfo);
         }
 
         return books;
-    }*/
+    }
 
     /**
      * Get book title from ID
@@ -268,22 +215,19 @@ public class BookDaoWithHibernate implements BookDao{
     public ArrayList<ArrayList> getNonApprovedBooks() {
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
+
         ArrayList bookInfo = new ArrayList();
         ArrayList<ArrayList> nonApprovedBooks = new ArrayList<ArrayList>();
 
         for(Book book : allBooks) {
             if(book.getApproved() == 0) {
-                int bookId = book.getId();
-                String title = book.getTitle();
-                String author = book.getAuthor();
-                String isbn = book.getIsbn();
 
-                log.info("in nonapproved books, id: " + bookId);
+                log.info("in nonapproved books, id: " + book.getId());
 
-                bookInfo.add(bookId);
-                bookInfo.add(title);
-                bookInfo.add(author);
-                bookInfo.add(isbn);
+                bookInfo.add(book.getId());
+                bookInfo.add(book.getTitle());
+                bookInfo.add(book.getAuthor());
+                bookInfo.add(book.getIsbn());
 
                 nonApprovedBooks.add(bookInfo);
             }
@@ -310,9 +254,6 @@ public class BookDaoWithHibernate implements BookDao{
         book = allBooks.get(randomNumber);
         int bookId = book.getId();
         String title = book.getTitle();
-
-        log.info("bookId: " + bookId);
-        log.info("title: " + title);
 
         ArrayList randomBook = new ArrayList();
         randomBook.add(bookId);

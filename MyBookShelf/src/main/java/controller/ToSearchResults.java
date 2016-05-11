@@ -38,8 +38,8 @@ public class ToSearchResults extends HttpServlet {
         String searchType = (String) session.getAttribute("searchType");
 
         //create element to hold search results
-        ArrayList<Map<Integer, String>> authorSearchResults = new ArrayList<Map<Integer, String>>();
-        ArrayList<Map<Integer ,Map<String, String>>> allTitles = new ArrayList<Map<Integer ,Map<String, String>>>();
+        ArrayList<ArrayList> authorSearchResults = new ArrayList<ArrayList>();
+        ArrayList<ArrayList> allTitles = new ArrayList<ArrayList>();
         BookDaoWithHibernate books = new BookDaoWithHibernate();
 
         if(searchType.equals("author")) {
