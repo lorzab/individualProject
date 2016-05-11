@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: persistance.RoleDaoWithHibernateTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE!
-testGetAllRoles(persistance.RoleDaoWithHibernateTest)  Time elapsed: 0 sec  <<< FAILURE!
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 451.451 sec <<< FAILURE!
+testGetAllRoles(persistance.RoleDaoWithHibernateTest)  Time elapsed: 150.36 sec  <<< FAILURE!
 java.lang.AssertionError: There is the wrong amount in the list
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)
@@ -36,7 +36,7 @@ java.lang.AssertionError: There is the wrong amount in the list
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testAddRole(persistance.RoleDaoWithHibernateTest)  Time elapsed: 0.005 sec  <<< FAILURE!
+testAddRole(persistance.RoleDaoWithHibernateTest)  Time elapsed: 150.483 sec  <<< FAILURE!
 java.lang.AssertionError: Insert failed
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)

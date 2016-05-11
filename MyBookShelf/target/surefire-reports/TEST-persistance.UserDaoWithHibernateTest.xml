@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="1" name="persistance.UserDaoWithHibernateTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="2" failures="1" name="persistance.UserDaoWithHibernateTest" time="300.46" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
@@ -62,7 +62,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="persistance.UserDaoWithHibernateTest" name="testGetAllUsers" time="0">
+  <testcase classname="persistance.UserDaoWithHibernateTest" name="testGetAllUsers" time="150.23">
     <failure message="There is the wrong amount in the list" type="java.lang.AssertionError">java.lang.AssertionError: There is the wrong amount in the list
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)
@@ -96,12 +96,16 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-out>2016-05-11 01:15:05,604 771  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08001
-2016-05-11 01:15:05,604 771  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - No suitable driver found for OPENSHIFT_MYSQL_DB_URL
-2016-05-11 01:15:05,604 771  [main] ERROR persistance.UserDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
-2016-05-11 01:15:05,605 772  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08001
-2016-05-11 01:15:05,605 772  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - No suitable driver found for OPENSHIFT_MYSQL_DB_URL
+    <system-out>2016-05-11 17:52:27,988 1507246 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08S01
+2016-05-11 17:52:27,988 1507246 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2016-05-11 17:52:27,988 1507246 [main] ERROR persistance.UserDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
+2016-05-11 17:53:43,121 1582379 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08S01
+2016-05-11 17:53:43,121 1582379 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
 </system-out>
   </testcase>
-  <testcase classname="persistance.UserDaoWithHibernateTest" name="testUpdateUser" time="0.002"/>
+  <testcase classname="persistance.UserDaoWithHibernateTest" name="testUpdateUser" time="150.23"/>
 </testsuite>

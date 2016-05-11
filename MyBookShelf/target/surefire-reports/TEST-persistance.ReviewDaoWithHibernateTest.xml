@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="2" name="persistance.ReviewDaoWithHibernateTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="3" failures="2" name="persistance.ReviewDaoWithHibernateTest" time="451.147" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
@@ -62,8 +62,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="persistance.ReviewDaoWithHibernateTest" name="testUpdateReview" time="0"/>
-  <testcase classname="persistance.ReviewDaoWithHibernateTest" name="testGetAllReviews" time="0.001">
+  <testcase classname="persistance.ReviewDaoWithHibernateTest" name="testGetAllReviews" time="150.351">
     <failure message="There is the wrong amount in the list" type="java.lang.AssertionError">java.lang.AssertionError: There is the wrong amount in the list
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)
@@ -97,14 +96,19 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-out>2016-05-11 01:15:05,570 737  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08001
-2016-05-11 01:15:05,571 738  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - No suitable driver found for OPENSHIFT_MYSQL_DB_URL
-2016-05-11 01:15:05,571 738  [main] ERROR persistance.ReviewListDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
-2016-05-11 01:15:05,571 738  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08001
-2016-05-11 01:15:05,571 738  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - No suitable driver found for OPENSHIFT_MYSQL_DB_URL
+    <system-out>2016-05-11 17:37:25,424 604682 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08S01
+2016-05-11 17:37:25,424 604682 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2016-05-11 17:37:25,425 604683 [main] ERROR persistance.ReviewListDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
+2016-05-11 17:38:40,617 679875 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08S01
+2016-05-11 17:38:40,617 679875 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
 </system-out>
   </testcase>
-  <testcase classname="persistance.ReviewDaoWithHibernateTest" name="testAddReview" time="0">
+  <testcase classname="persistance.ReviewDaoWithHibernateTest" name="testUpdateReview" time="150.441"/>
+  <testcase classname="persistance.ReviewDaoWithHibernateTest" name="testAddReview" time="150.355">
     <failure message="Insert failed" type="java.lang.AssertionError">java.lang.AssertionError: Insert failed
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)
@@ -138,12 +142,16 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-out>2016-05-11 01:15:05,573 740  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08001
-2016-05-11 01:15:05,573 740  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - No suitable driver found for OPENSHIFT_MYSQL_DB_URL
-2016-05-11 01:15:05,573 740  [main] ERROR persistance.ReviewListDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
-2016-05-11 01:15:05,575 742  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08001
-2016-05-11 01:15:05,575 742  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - No suitable driver found for OPENSHIFT_MYSQL_DB_URL
-2016-05-11 01:15:05,576 743  [main] ERROR persistance.ReviewListDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
+    <system-out>2016-05-11 17:42:26,236 905494 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08S01
+2016-05-11 17:42:26,236 905494 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2016-05-11 17:42:26,236 905494 [main] ERROR persistance.ReviewListDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
+2016-05-11 17:43:41,414 980672 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 08S01
+2016-05-11 17:43:41,414 980672 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2016-05-11 17:43:41,414 980672 [main] ERROR persistance.ReviewListDaoWithHibernate  - org.hibernate.exception.JDBCConnectionException: Could not open connection
 </system-out>
   </testcase>
 </testsuite>

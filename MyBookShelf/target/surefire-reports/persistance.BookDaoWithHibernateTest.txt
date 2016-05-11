@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: persistance.BookDaoWithHibernateTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.965 sec <<< FAILURE!
-testGetAllBooks(persistance.BookDaoWithHibernateTest)  Time elapsed: 0.939 sec  <<< FAILURE!
-java.lang.AssertionError: There is the wrong amount in the list
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 529.718 sec <<< FAILURE!
+testAddBook(persistance.BookDaoWithHibernateTest)  Time elapsed: 227.356 sec  <<< FAILURE!
+java.lang.AssertionError: Insert failed
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)
-	at persistance.BookDaoWithHibernateTest.testGetAllBooks(BookDaoWithHibernateTest.java:35)
+	at persistance.BookDaoWithHibernateTest.testAddBook(BookDaoWithHibernateTest.java:79)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -36,11 +36,11 @@ java.lang.AssertionError: There is the wrong amount in the list
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testAddBook(persistance.BookDaoWithHibernateTest)  Time elapsed: 0.002 sec  <<< FAILURE!
-java.lang.AssertionError: Insert failed
+testGetAllBooks(persistance.BookDaoWithHibernateTest)  Time elapsed: 151.802 sec  <<< FAILURE!
+java.lang.AssertionError: There is the wrong amount in the list
 	at org.junit.Assert.fail(Assert.java:74)
 	at org.junit.Assert.assertTrue(Assert.java:37)
-	at persistance.BookDaoWithHibernateTest.testAddBook(BookDaoWithHibernateTest.java:79)
+	at persistance.BookDaoWithHibernateTest.testGetAllBooks(BookDaoWithHibernateTest.java:35)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
