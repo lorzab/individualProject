@@ -65,7 +65,7 @@ public class ToReviewsDeleted extends HttpServlet {
             }
         }
 
-        String urlForward = "/goto-delete-reviews";
+        String urlForward = "goto-delete-reviews";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

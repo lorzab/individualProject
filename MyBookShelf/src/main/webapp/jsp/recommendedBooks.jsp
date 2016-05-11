@@ -19,7 +19,7 @@
 
 <br />
 
-<form action="/goto-recommended-books" method="GET">
+<form action="goto-recommended-books" method="GET">
 <table>
   <thead>
   <tr>
