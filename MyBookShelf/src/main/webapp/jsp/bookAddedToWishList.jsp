@@ -28,7 +28,7 @@
   to remove ${book} from your list <br />
 </c:if>
 
-<a href="warArchive/index.jsp">Search again</a>
+<a href="/index.jsp">Search again</a>
 
 </body>
 </html>

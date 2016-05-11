@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToBookApproveBooks",
-        urlPatterns = { "warArchive/goto-approve-books" }
+        urlPatterns = { "/goto-approve-books" }
 )
 public class TpApproveBooks extends HttpServlet {
 
@@ -38,7 +38,7 @@ public class TpApproveBooks extends HttpServlet {
 
         session.setAttribute("nonApproved", nonApprovedBooks);
 
-        String urlForward = "warArchive/jsp/approveBooks.jsp";
+        String urlForward = "/jsp/approveBooks.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

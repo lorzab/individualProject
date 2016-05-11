@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 @WebServlet(
         name = "goToAddBook",
-        urlPatterns = { "warArchive/goto-my-add-book" }
+        urlPatterns = { "/goto-my-add-book" }
 )
 public class ToAddBook extends HttpServlet {
 
@@ -29,7 +29,7 @@ public class ToAddBook extends HttpServlet {
         //get the session object
         HttpSession session = request.getSession();
 
-        String urlForward = "warArchive/jsp/addBook.jsp";
+        String urlForward = "/jsp/addBook.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

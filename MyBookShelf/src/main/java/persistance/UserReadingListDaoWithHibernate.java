@@ -168,7 +168,7 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
         List<UserReadingList> allUsersReadingList = new ArrayList<UserReadingList>();
         allUsersReadingList = getAllUserReadingList();
         ArrayList<ArrayList<String>> userReadingList = new ArrayList<ArrayList<String>>();
-        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<String> bookInfo = null;
 
         BookDaoWithHibernate book = new BookDaoWithHibernate();
         ReviewListDaoWithHibernate review = new ReviewListDaoWithHibernate();
@@ -179,6 +179,8 @@ public class UserReadingListDaoWithHibernate implements UserReadingListDao {
 
                 //if book is on the wish list dont show
                 if (wishList == wantToSeeWishList) {
+                    bookInfo = new ArrayList<String>();
+
                     log.info(bookToRead.getBook_id());
                     int bookId = bookToRead.getBook_id();
 

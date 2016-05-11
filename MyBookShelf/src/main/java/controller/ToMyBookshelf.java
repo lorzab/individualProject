@@ -22,7 +22,7 @@ import java.io.IOException;
  */
 @WebServlet(
         name = "goToMyBookshelf",
-        urlPatterns = { "warArchive/goto-my-bookshelf" }
+        urlPatterns = { "/goto-my-bookshelf" }
 )
 public class ToMyBookshelf extends HttpServlet {
     private final Logger log = Logger.getLogger(this.getClass());
@@ -55,7 +55,7 @@ public class ToMyBookshelf extends HttpServlet {
         session.setAttribute("quoteOfDay", quoteForPage);
         session.setAttribute("quoteAuthor", quoteAuthor);
 
-        String urlForward = "warArchive/jsp/myBookshelf.jsp";
+        String urlForward = "/jsp/myBookshelf.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

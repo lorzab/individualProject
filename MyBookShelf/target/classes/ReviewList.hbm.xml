@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entity.ReviewList" table="reviewList">
+        <meta attribute="class-description">
+            This class contains the review detail.
+        </meta>
+
+        <!-- Add id for the key -->
+        <id name="review_id" type="int" column="review_id">
+            <generator class="native"/>
+        </id>
+
+        <!-- properties for other variables/columns -->
+        <property name="notes" column="notes" />
+        <property name="rating" column="rating" />
+        <property name="user_id" column="user_id" />
+        <property name="book_id" column="book_id" />
+        <property name="reading_id" column="reading_id" />
+    </class>
+</hibernate-mapping>

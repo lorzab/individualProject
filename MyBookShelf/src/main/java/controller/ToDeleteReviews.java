@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToDeleteReviews",
-        urlPatterns = { "warArchive/goto-delete-reviews" }
+        urlPatterns = { "/goto-delete-reviews" }
 )
 public class ToDeleteReviews extends HttpServlet {
 
@@ -38,7 +38,7 @@ public class ToDeleteReviews extends HttpServlet {
 
         session.setAttribute("reviewToModerate", reviewsToReview);
 
-        String urlForward = "warArchive/jsp/deleteReviews.jsp";
+        String urlForward = "/jsp/deleteReviews.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

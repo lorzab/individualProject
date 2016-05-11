@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToRecommendedBooks",
-        urlPatterns = { "warArchive/goto-recommended-books" }
+        urlPatterns = { "/goto-recommended-books" }
 )
 public class ToRecommendedBooks extends HttpServlet {
 
@@ -38,7 +38,7 @@ public class ToRecommendedBooks extends HttpServlet {
         recommendedBooks = reviewList.getRecommendedBooksUserHasNotRead(userId);
         session.setAttribute("recommendedBooks", recommendedBooks);
 
-        String urlForward = "warArchive/jsp/recommendedBooks.jsp";
+        String urlForward = "/jsp/recommendedBooks.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

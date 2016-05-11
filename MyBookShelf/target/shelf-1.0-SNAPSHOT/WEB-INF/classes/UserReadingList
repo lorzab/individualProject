@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entity.UserReadingList" table="userReadingList">
+        <meta attribute="class-description">
+            This class contains the reading list detail.
+        </meta>
+
+        <!-- Add id for the key -->
+        <id name="reading_id" type="int" column="reading_id">
+            <generator class="native"/>
+        </id>
+
+        <!-- properties for other variables/columns -->
+        <property name="user_id" column="userreadinglist_ibfk_2" />
+        <property name="book_id" column="userreadinglist_ibfk_1" />
+        <property name="wish_list" column="wish_list" />
+        <property name="date_added" column="date_added" />
+    </class>
+</hibernate-mapping>

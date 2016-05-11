@@ -20,7 +20,7 @@
 <br />
 
 <h1>Delete Review</h1>
-<form action="warArchive/goto-reviews-deleted" method="GET">
+<form action="/goto-reviews-deleted" method="GET">
 <table>
   <tr>
     <th>Review ID</th>
@@ -33,7 +33,7 @@
       <td>${review.get(0)}</td>
       <td>${review.get(1)}</td>
       <td><input type="checkbox" value="${review.get(0)}" name="${review.get(0)}" /></td>
-      <td><input type="submit" name="submit" value="submit" /></td>
+      <td><input type="submit" name="submit" value="delete" /></td>
     </tr>
   </c:forEach>
 </table>

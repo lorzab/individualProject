@@ -22,7 +22,7 @@ import java.util.List;
  */
 @WebServlet(
         name = "goToApprovedBooks",
-        urlPatterns = { "warArchive/goto-approvedbooks" }
+        urlPatterns = { "/goto-approvedbooks" }
 )
 public class ToBooksApproved extends HttpServlet {
 
@@ -46,8 +46,9 @@ public class ToBooksApproved extends HttpServlet {
         //go through the list of all nonapproved books
         for(ArrayList abook : nonApprovedBooks) {
             //the bookID is at index 0
-            int bookId = (Integer) abook.get(0);
-            String bookIdString = Integer.toString(bookId);
+            /*int bookId = (Integer) abook.get(0);
+            String bookIdString = Integer.toString(bookId);*/
+            String bookIdString = (String) abook.get(0);
             String approveId = request.getParameter(bookIdString);
 
             log.info("bookIdString: " + bookIdString);
@@ -87,7 +88,7 @@ public class ToBooksApproved extends HttpServlet {
         }
 
         session.setAttribute("approvedBooks", approvedBooks);
-        String urlForward = "warArchive/jsp/booksApproved.jsp";
+        String urlForward = "/jsp/booksApproved.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

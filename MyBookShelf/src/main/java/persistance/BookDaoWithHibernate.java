@@ -156,10 +156,11 @@ public class BookDaoWithHibernate implements BookDao{
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
-        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<String> bookInfo = null;
         ArrayList<ArrayList<String>> books = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {
+            bookInfo = new ArrayList<String>();
 
             log.info("book dao");
 
@@ -189,10 +190,11 @@ public class BookDaoWithHibernate implements BookDao{
 
         log.info("Number of books" +allBooks.size());
 
-        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<String> bookInfo = null;
         ArrayList<ArrayList<String>> books = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {
+            bookInfo = new ArrayList<String>();
             log.info(book.getId() + " " + book.getTitle() + " " + book.getAuthor());
 
             bookInfo.add(Integer.toString(book.getId()));
@@ -251,11 +253,12 @@ public class BookDaoWithHibernate implements BookDao{
         List<Book> allBooks = new ArrayList<Book>();
         allBooks = getAllBooks();
 
-        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<String> bookInfo;
         ArrayList<ArrayList<String>> nonApprovedBooks = new ArrayList<ArrayList<String>>();
 
         for(Book book : allBooks) {
             if(book.getApproved() == 0) {
+                bookInfo = new ArrayList<String>();
 
                 log.info("in nonapproved books, id: " + book.getId());
 

@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToRandomBook",
-        urlPatterns = { "warArchive/goto-random-book" }
+        urlPatterns = { "/goto-random-book" }
 )
 public class ToRandomBook extends HttpServlet {
 
@@ -45,7 +45,7 @@ public class ToRandomBook extends HttpServlet {
         String title = (String) bookInfo.get(1);
         session.setAttribute("book", title);
 
-        String urlForward = "warArchive/jsp/randomBook.jsp";
+        String urlForward = "/jsp/randomBook.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

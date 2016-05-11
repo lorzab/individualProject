@@ -60,10 +60,6 @@
             <url-pattern>/goto-random-book</url-pattern>
             <url-pattern>/goto-recommended-books</url-pattern>
             <url-pattern>/goto-approve-books</url-pattern>
-            <url-pattern></url-pattern>
-            <url-pattern></url-pattern>
-            <url-pattern></url-pattern>
-            <url-pattern></url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>regUser</role-name>

@@ -240,7 +240,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
         allReviews = getAllReviews();
         BookDaoWithHibernate book = new BookDaoWithHibernate();
-        ArrayList<String> bookInfo = new ArrayList<String>();
+        ArrayList<String> bookInfo = null;
         ArrayList<ArrayList<String>> allRecommendatedBooks = new ArrayList<ArrayList<String>>();
         double recommendationPercentage = .5;
 
@@ -248,6 +248,7 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         for(ReviewList review : allReviews) {
             //check to make sure the user did write the review
             if(review.getUser_id() != userId) {
+                bookInfo = new ArrayList<String>();
                 double recommendatingRating = calcuateRecommendationPercentage(review.getBook_id());
 
                 if(recommendatingRating > recommendationPercentage) {
@@ -280,10 +281,12 @@ public class ReviewListDaoWithHibernate implements ReviewListDao {
         List<ReviewList> allReviews = new ArrayList<ReviewList>();
         allReviews = getAllReviews();
 
-        ArrayList<String> reviewInfo = new ArrayList<String>();
+        ArrayList<String> reviewInfo = null;
         ArrayList<ArrayList<String>> reviewsToReview = new ArrayList<ArrayList<String>>();
 
         for (ReviewList review : allReviews) {
+            reviewInfo = new ArrayList<String>();
+
             reviewInfo.add(Integer.toString(review.getReview_id()));
             reviewInfo.add(review.getNotes());
 
