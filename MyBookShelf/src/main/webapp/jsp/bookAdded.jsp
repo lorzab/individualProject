@@ -26,7 +26,7 @@ Author: ${author} <br />
 ISBN ${isbn} <br />
 Recommencation Percentage ${recommencationPercentage} <br />
 
-<a href="/warArchive/goto-my-add-book">Add another book</a>
+<a href="warArchive/goto-my-add-book">Add another book</a>
 
 </body>
 </html>

@@ -23,7 +23,7 @@
 
     <c:if test="${searchResults.isEmpty()}">
       <h3>There were no books by that author</h3>
-      <h3><a href="/warArchive/index.jsp">Search Again</a></h3>
+      <h3><a href="warArchive/index.jsp">Search Again</a></h3>
     </c:if>
 
     <c:if test="${!searchResults.isEmpty()}">
@@ -61,7 +61,7 @@
         <tbody>
         <c:forEach items="${searchResults}" var="maps">
             <tr>
-              <td><a href="/warArchive/goto-book?bookID=${maps.get(0)}">
+              <td><a href="warArchive/goto-book?bookID=${maps.get(0)}">
                   ${maps.get(1)}</a></td>
               <td>${maps.get(2)}</td>
             </tr>

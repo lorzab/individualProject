@@ -20,6 +20,6 @@
 <br />
 <h1>Your Random Selection Is...</h1>
 
-<a href="/warArchive/goto-book?bookID=${bookId}">${book}</a>
+<a href="warArchive/goto-book?bookID=${bookId}">${book}</a>
 </body>
 </html>

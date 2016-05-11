@@ -24,7 +24,7 @@
 <table>
   <c:forEach items="${approvedBooks}" var="book">
     <tr>
-      <td><a href="/warArchive/goto-book?bookID=${book.get(0)}">${book.get(1)}</a></td>
+      <td><a href="warArchive/goto-book?bookID=${book.get(0)}">${book.get(1)}</a></td>
     </tr>
   </c:forEach>
 </table>

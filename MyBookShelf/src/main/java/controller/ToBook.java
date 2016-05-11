@@ -27,7 +27,7 @@ import java.util.List;
  */
 @WebServlet(
         name = "goToBook",
-        urlPatterns = { "/warArchive/goto-book" }
+        urlPatterns = { "warArchive/goto-book" }
 )
 public class ToBook extends HttpServlet {
 
@@ -39,7 +39,7 @@ public class ToBook extends HttpServlet {
         //get the session object
         HttpSession session = request.getSession();
 
-        String urlForward = "/warArchive/jsp/book.jsp";
+        String urlForward = "warArchive/jsp/book.jsp";
 
         //get the book wanted
         BookDaoWithHibernate book = new BookDaoWithHibernate();

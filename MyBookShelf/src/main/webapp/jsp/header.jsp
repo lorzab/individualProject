@@ -9,13 +9,13 @@
           <div id="menubar">
             <ul id="menu">
               <li class="current">
-                <a href="/warArchive/goto-my-bookshelf">Your Bookshelf</a>
+                <a href="warArchive/goto-my-bookshelf">Your Bookshelf</a>
               </li>
               <li class="current">
-                <a href="/warArchive/index.jsp">Search</a>
+                <a href="warArchive/index.jsp">Search</a>
               </li>
               <li class="current">
-                <a href="/warArchive/jsp/admin.jsp">Admin</a>
+                <a href="warArchive/jsp/admin.jsp">Admin</a>
               </li>
             </ul>
           </div><!--close menubar-->

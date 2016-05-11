@@ -19,7 +19,7 @@
 
 <br />
 
-<form action="/goto-recommended-books" method="GET">
+<form action="warArchive//goto-recommended-books" method="GET">
 <table>
   <thead>
   <tr>
@@ -32,7 +32,7 @@
   <tbody>
   <c:forEach items="${recommendedBooks}" var="books">
       <tr>
-        <td><a href="/warArchive/goto-book?bookID=${books.get(0)}">${books.get(1)}</a></td>
+        <td><a href="warArchive/goto-book?bookID=${books.get(0)}">${books.get(1)}</a></td>
         <td>${books.get(2)}</td>
         <td>${books.get(3)}</td>
         <td>${books.get(4)}</td>

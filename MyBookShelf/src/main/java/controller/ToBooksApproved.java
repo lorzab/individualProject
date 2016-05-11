@@ -22,7 +22,7 @@ import java.util.List;
  */
 @WebServlet(
         name = "goToApprovedBooks",
-        urlPatterns = { "/warArchive/goto-approvedbooks" }
+        urlPatterns = { "warArchive/goto-approvedbooks" }
 )
 public class ToBooksApproved extends HttpServlet {
 
@@ -87,7 +87,7 @@ public class ToBooksApproved extends HttpServlet {
         }
 
         session.setAttribute("approvedBooks", approvedBooks);
-        String urlForward = "/warArchive/jsp/booksApproved.jsp";
+        String urlForward = "warArchive/jsp/booksApproved.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

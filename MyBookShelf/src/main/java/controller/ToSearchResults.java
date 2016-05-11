@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 @WebServlet(
         name = "goToSearchResults",
-        urlPatterns = { "/warArchive/goto-search-results" }
+        urlPatterns = { "warArchive/goto-search-results" }
 )
 public class ToSearchResults extends HttpServlet {
 
@@ -58,7 +58,7 @@ public class ToSearchResults extends HttpServlet {
             session.setAttribute("searchResults", allTitles);
         }
 
-        String urlForward = "/warArchive/jsp/searchResults.jsp";
+        String urlForward = "warArchive/jsp/searchResults.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
                 urlForward);

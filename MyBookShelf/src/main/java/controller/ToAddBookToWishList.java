@@ -20,7 +20,7 @@ import java.io.IOException;
  */
 @WebServlet(
         name = "goToAddBookWishList",
-        urlPatterns = { "/warArchive/goto-book-changed-wishlist" }
+        urlPatterns = { "warArchive/goto-book-changed-wishlist" }
 )
 public class ToAddBookToWishList extends HttpServlet {
 
@@ -32,7 +32,7 @@ public class ToAddBookToWishList extends HttpServlet {
         //get the session object
         HttpSession session = request.getSession();
 
-        String urlForward = "/warArchive/jsp/bookAddedToWishList.jsp";
+        String urlForward = "warArchive/jsp/bookAddedToWishList.jsp";
 
         //get the readinglist change
         String wishlist = request.getParameter("wishList");

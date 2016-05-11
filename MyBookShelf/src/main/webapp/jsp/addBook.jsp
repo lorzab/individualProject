@@ -21,7 +21,7 @@
 
 <h1>Add Book</h1>
 
-<form action="/warArchive/goto-my-book-added" method="GET">
+<form action="warArchive/goto-my-book-added" method="GET">
 
     <label>Title:</label>
     <input type="text" name="title" />
@@ -45,7 +45,7 @@
     <br />
 
     <input type="submit" id="submit" value="submit" />
-    <a href="/warArchive/goto-my-bookshelf">Back</a>
+    <a href="warArchive/goto-my-bookshelf">Back</a>
 </form>
 
 </body>

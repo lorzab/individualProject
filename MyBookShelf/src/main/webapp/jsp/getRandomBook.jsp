@@ -20,7 +20,7 @@
 <br />
 <h1>Get Random Book</h1>
 
-<form action="/warArchive/goto-random-book" method="GET">
+<form action="warArchive/goto-random-book" method="GET">
   <input type="submit" name="submit" value="Get a Random Book Suggestion" />
 </form>
 </body>
