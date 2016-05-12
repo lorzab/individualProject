@@ -8,15 +8,18 @@
             org.hibernate.dialect.MySQL5Dialect
         </property>
         <property name="connection.url">
+            <!-- jdbc:mysql://127.8.250.130:3306/tomcat -->
             jdbc:mysql://localhost:3307/BookshelfDB
         </property>
         <property name="connection.driver_class">
             com.mysql.jdbc.Driver
         </property>
         <property name="connection.username">
+            <!-- admingUtFi8Q -->
             root
         </property>
         <property name="connection.password">
+            <!-- scCS2Y5u4Ul3 -->
             NewPassword
         </property>
         <property name="javax.persistence.validation.mode">none</property>

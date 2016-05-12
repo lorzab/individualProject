@@ -3470,3 +3470,59 @@ HHH000010: On release of batch it still contained JDBC statements
 Added user: 52
 2016-05-11
 Added user: 53
+HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+HHH000412: Hibernate Core {4.0.1.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000221: Reading mappings from resource: ReviewList.hbm.xml
+HHH000221: Reading mappings from resource: UserReadingList.hbm.xml
+HHH000041: Configured SessionFactory: null
+HHH000038: Composite-id class does not override equals(): entity.RolePK
+HHH000039: Composite-id class does not override hashCode(): entity.RolePK
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000115: Hibernate connection pool size: 20
+HHH000006: Autocommit mode: false
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/BookshelfDB]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+org.hibernate.StaleStateException: Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1
+HHH000010: On release of batch it still contained JDBC statements
+Added book: com.lorabahr.bookshelf.entity.ReviewList{reviewId=85, readingId=31, userId='3', bookId='84', rating= 1.0} with isbn of: 85
+Added book: com.lorabahr.bookshelf.entity.ReviewList{reviewId=86, readingId=31, userId='3', bookId='84', rating= 1.0} with isbn of: 86
+org.hibernate.StaleStateException: Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1
+HHH000010: On release of batch it still contained JDBC statements
+Added book: com.lorabahr.bookshelf.entity.ReviewList{reviewId=87, readingId=31, userId='3', bookId='84', rating= 1.0} with isbn of: 87
+Added book: com.lorabahr.bookshelf.entity.ReviewList{reviewId=88, readingId=29, userId='3', bookId='81', rating= 0.0} with isbn of: 88
+SQL Error: 1062, SQLState: 23000
+Duplicate entry 'ironman' for key 'user_name'
+org.hibernate.exception.ConstraintViolationException: Duplicate entry 'ironman' for key 'user_name'
+SQL Error: 1062, SQLState: 23000
+Duplicate entry 'ironman' for key 'user_name'
+org.hibernate.exception.ConstraintViolationException: Duplicate entry 'ironman' for key 'user_name'
+SQL Error: 1062, SQLState: 23000
+Duplicate entry 'ironman' for key 'user_name'
+org.hibernate.exception.ConstraintViolationException: Duplicate entry 'ironman' for key 'user_name'
+SQL Error: 1062, SQLState: 23000
+Duplicate entry 'lBahr' for key 'user_name'
+org.hibernate.exception.ConstraintViolationException: Duplicate entry 'lBahr' for key 'user_name'
+SQL Error: 1062, SQLState: 23000
+Duplicate entry 'LLCoolJ' for key 'user_name'
+org.hibernate.exception.ConstraintViolationException: Duplicate entry 'LLCoolJ' for key 'user_name'
+SQL Error: 1062, SQLState: 23000
+Duplicate entry 'LLCoolJ' for key 'user_name'
+org.hibernate.exception.ConstraintViolationException: Duplicate entry 'LLCoolJ' for key 'user_name'
+2016-05-11
+Added user: 54
+2016-05-11
+Added user: 55
+2016-05-11
+org.hibernate.StaleStateException: Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1
+HHH000010: On release of batch it still contained JDBC statements
+2016-05-11
+Added user: 56
+2016-05-11
+Added user: 57

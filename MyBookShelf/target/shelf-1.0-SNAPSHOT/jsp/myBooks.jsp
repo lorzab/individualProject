@@ -40,7 +40,6 @@
         <td>${books[3]}</td>
         <td>${books[4]}</td>
         <td>${books[5]}</td>
-        <td>${books[0]}</td>
       </tr>
   </c:forEach>
   </tbody>

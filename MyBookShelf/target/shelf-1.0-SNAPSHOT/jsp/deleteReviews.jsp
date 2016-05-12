@@ -33,7 +33,7 @@
       <td>${review.get(0)}</td>
       <td>${review.get(1)}</td>
       <td><input type="checkbox" value="${review.get(0)}" name="${review.get(0)}" /></td>
-      <td><input type="submit" name="submit" value="submit" /></td>
+      <td><input type="submit" name="submit" value="delete" /></td>
     </tr>
   </c:forEach>
 </table>

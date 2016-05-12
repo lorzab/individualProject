@@ -20,7 +20,7 @@
 <br />
 <h1>Admin Page</h1>
 <ul>
-  <h3><a href="../index.jsp">Take me to the Search Page</a></h3>
+  <h3><a href="/index.jsp">Take me to the Search Page</a></h3>
   <h3><a href="/goto-approve-books">Approve Books</a></h3>
   <h3><a href="/goto-delete-reviews">Delete Reviews</a></h3>
 </ul>

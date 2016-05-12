@@ -23,7 +23,7 @@
 
     <c:if test="${searchResults.isEmpty()}">
       <h3>There were no books by that author</h3>
-      <h3><a href="index.jsp">Search Again</a></h3>
+      <h3><a href="/index.jsp">Search Again</a></h3>
     </c:if>
 
     <c:if test="${!searchResults.isEmpty()}">
@@ -47,7 +47,7 @@
 
     <c:if test="${searchResults.isEmpty()}">
       <h3>There were no books that match that title</h3>
-      <h3><a href="index.jsp">Search Again</a></h3>
+      <h3><a href="/index.jsp">Search Again</a></h3>
     </c:if>
 
     <c:if test="${!searchResults.isEmpty()}">

@@ -21,7 +21,7 @@
 
 <h1>Search</h1>
 
-<form action="../goto-search-results" method="GET">
+<form action="/goto-search-results" method="GET">
 
 
 <c:choose>
@@ -40,7 +40,7 @@
 
     </c:when>
     <c:otherwise>
-        <h3><a href="../index.jsp">Go to Search Options</a></h3>
+        <h3><a href="/index.jsp">Go to Search Options</a></h3>
     </c:otherwise>
 </c:choose>
 

@@ -19,6 +19,6 @@
 
 <br />
     <h1>Your login/password was incorrect try again... Fail</h1>
-<h1><a href="index.jsp">Try Again</a></h1>
+<h1><a href="/index.jsp">Try Again</a></h1>
 </body>
 </html>
