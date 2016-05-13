@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * Created by Lora on 5/9/16.
  *
- * After you have chosen a random book this takes you to the page to render what book was provided
+ * This servlet will take you to the random book that was generated information
  */
 @WebServlet(
         name = "goToRandomBook",

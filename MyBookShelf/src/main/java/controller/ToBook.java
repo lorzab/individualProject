@@ -21,8 +21,8 @@ import java.util.List;
 /**
  * Created by Lora on 5/7/16.
  *
- * This servlet gets the information about the book that was clicked on to view and if logged in see if
- * it is on your wishlist
+ * This servlet gets the information about the book that was clicked on to view and if the user is logged in see if
+ * it is on their wishlist along with showing the other book information
  *
  */
 @WebServlet(

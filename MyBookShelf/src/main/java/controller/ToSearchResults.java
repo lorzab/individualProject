@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * Created by Lora on 5/7/16.
  *
- * Gets the results from your search to be placed on the page
+ * Gets the results from the search to be placed on the page
  */
 @WebServlet(
         name = "goToSearchResults",
@@ -40,6 +40,7 @@ public class ToSearchResults extends HttpServlet {
         ArrayList<ArrayList<String>> allTitles = new ArrayList<ArrayList<String>>();
         BookDaoWithHibernate books = new BookDaoWithHibernate();
 
+        //depending on the search type call the correct method to return the information
         if(searchType.equals("author")) {
             //get the author being searched add to search Results
             String author = request.getParameter("authorSearch");

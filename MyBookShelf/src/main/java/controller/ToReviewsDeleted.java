@@ -17,7 +17,8 @@ import java.util.List;
 /**
  * Created by Lora on 5/10/16.
  *
- * Takes the review ids from the deleteReviews page and removes them from the database
+ * Takes the review ids from the deleteReviews page and removes them from the database, then returns you the deleted
+ * reviews page with the review removed.
  */
 @WebServlet(
         name = "goToReviewsDeleted",

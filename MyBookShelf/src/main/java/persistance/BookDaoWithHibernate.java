@@ -122,7 +122,7 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get all the books by one author
+     * Get all the books by one author.
      *
      * @param author name to search for in the database
      * @return return all of the books by this author
@@ -149,6 +149,7 @@ public class BookDaoWithHibernate implements BookDao{
 
     /**
      * Search the database for a book by this title
+     *
      * @param title title to be searched for
      * @return return all books that have this title
      */
@@ -180,7 +181,7 @@ public class BookDaoWithHibernate implements BookDao{
 
 
     /**
-     * Get all books in the database in an arrayList
+     * Get all books in the database and return in an arrayList.
      *
      * @return an ArrayList of all of the attributes of the book
      */
@@ -208,7 +209,8 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get book title from bookID
+     * Get book title from bookID.
+     *
      * @param bookId the id of the book to be searched
      * @return the title of the book to match the id given
      */
@@ -227,7 +229,8 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get book author from bookID
+     * Get book author from bookID.
+     *
      * @param bookId to be searched
      * @return the author that matches the book id
      */
@@ -246,7 +249,8 @@ public class BookDaoWithHibernate implements BookDao{
     }
 
     /**
-     * Get nonapproved books for approval
+     * Get nonapproved books for approval.
+     *
      * @return all of the books that have not been approved by the admin yet
      */
     public ArrayList<ArrayList<String>> getNonApprovedBooks() {

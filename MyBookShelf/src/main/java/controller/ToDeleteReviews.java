@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * Created by Lora on 5/10/16.
  *
- * This servlet pulls up all of the reviews to be looked over and see if any need to be deleted
+ * This servlet pulls up all of the reviews to be looked over and gives the option to deleted inappropriate reviews
  */
 @WebServlet(
         name = "goToDeleteReviews",

@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by Lora on 5/8/16.
  *
- * This servlet takes you to the addBook page
+ * This servlet transfers to the addBook page
  */
 @WebServlet(
         name = "goToAddBook",

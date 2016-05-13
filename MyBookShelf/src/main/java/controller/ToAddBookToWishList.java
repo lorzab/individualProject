@@ -15,8 +15,8 @@ import java.io.IOException;
 /**
  * Created by Lora on 5/8/16.
  *
- * This servlet takes a book that you want to add to your wishlist and puts it on the wishlist takes you to
- * a confirmation screen that it was added
+ * This servlet takes a book that is selected to add to a wishlist and puts it on the wishlist, then transfers to
+ * a confirmation screen that lets the user know the book was added it was added
  */
 @WebServlet(
         name = "goToAddBookWishList",
@@ -39,6 +39,7 @@ public class ToAddBookToWishList extends HttpServlet {
         session.setAttribute("onWishList", wishlist);
         log.info(wishlist);
 
+        //determine what value for the wishlist column
         int wantToRead = 0;
         if (wishlist.equals("yes")) {
             wantToRead = 1;

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * Created by Lora on 5/8/16.
  *
- * Takes you to all of the books that you have read and added
+ * This servlet transfers to all of the books that are on the list of read books for a user
  */
 @WebServlet(
         name = "goToMyBooks",

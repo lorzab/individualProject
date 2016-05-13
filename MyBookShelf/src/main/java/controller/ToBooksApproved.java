@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Lora on 5/9/16.
  *
  * This servlet takes the approved book information and updates the database to the book being approved and
- * takes you to a confimation page
+ * transfers you to a confirmation page
  */
 @WebServlet(
         name = "goToApprovedBooks",

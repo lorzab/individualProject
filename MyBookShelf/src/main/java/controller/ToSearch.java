@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by Lora on 5/6/16.
  *
- * Takes you to the search page and shows you only the option you picked from the index page
+ * This servlet transfers to the search page and shows only the option that was picked from the index page
  */
 @WebServlet(
         name = "goToSearch",

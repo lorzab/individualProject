@@ -20,8 +20,8 @@ import java.io.IOException;
 /**
  * Created by Lora on 5/8/16.
  *
- * After you have entered all the information about a book to be added this takes the information and adds
- * to the database and goes to a confirmation page
+ * After all the information about a book to be added is entered this takes the information and adds it
+ * to the database and transfers to a confirmation page
  */
 @WebServlet(
         name = "goToBookAdded",

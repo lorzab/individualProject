@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Created by Lora on 5/8/16.
  *
- * This gets all of the books that are recommened over a certain percentage and displays them on screen
+ * This gets all of the books that are recommended over a certain percentage and displays them on screen
  */
 @WebServlet(
         name = "goToRecommendedBooks",
