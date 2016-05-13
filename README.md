@@ -15,8 +15,6 @@ I enjoy reading and do many of my family however I tend to lend my books or sell
 * Web Services or APIs
 	- Used a soap webservice that gives you a new quote every time you access it
 	- [Quote of the Day](http://www.swanandmokashi.com/HomePage/WebServices/QuoteOfTheDay.asmx?op=GetQuote)
-* Bookstrap
-	- Make the interface look pleasant
 * Logging
 	- configure logging for production to help with errors and debugging
 * Site and database hosted on OpenShift
