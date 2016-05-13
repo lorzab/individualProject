@@ -12,7 +12,7 @@
 | week 10 |  | | |
 | week 11 | team project work on creating objects | | |
 | week 12 | team project presentation try to get it going | 20 | | |
-| week 13 | get tests written for all CRUD methods in Dao's get all dao's complete and figure out foreign key relationship in intelliJ | | |
-| week 14 | work on JSPs and layout of the page |
-| week 15 | work on getting the servlets to work between the JSPs | 30 |
+| week 13 | get tests written for all CRUD methods in Dao's get all dao's complete and figure out foreign key relationship in intelliJ | | 15 | |
+| week 14 | work on JSPs and layout of the page | 20 | |
+| week 15 | work on getting the servlets to work between the JSPs | 30 | |
 |week 16|Finish up for presentation, try to get openshift deployed | 20 | |
